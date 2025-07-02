@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { IconCheck, IconChecked } from './images/index';
 
 interface IProp {
@@ -8,7 +8,7 @@ interface IProp {
   onChange?: (value: any) => void;
 }
 
-const Index: React.FC<IProp> = ({ onChange, value, label }) => {
+const Index: React.FC<IProp> = ({ onChange, value, label = '默认 label' }) => {
   useEffect(() => {
     if (typeof value !== 'undefined') {
       setCurrentValue(value);

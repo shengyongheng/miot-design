@@ -1,2 +1,2 @@
-export { default as Checkbox } from './Checkbox';
 export { default as BaseStepper } from './BaseStepper';
+export { default as Checkbox } from './Checkbox';
