@@ -1,0 +1,72 @@
+import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { log } from '../utils/fns';
+export default class SliderWithoutBlock extends Component {
+    static propTypes: {
+        options: PropTypes.Requireable<any[]>;
+        min: PropTypes.Requireable<number>;
+        max: PropTypes.Requireable<number>;
+        step: PropTypes.Requireable<number>;
+        initValue: PropTypes.Requireable<number>;
+        onSlidingChange: PropTypes.Requireable<(...args: any[]) => any>;
+        onSlidingComplete: PropTypes.Requireable<(...args: any[]) => any>;
+        disabled: PropTypes.Requireable<boolean>;
+        switchDisabled: PropTypes.Requireable<boolean>;
+        themeColor: PropTypes.Requireable<any>;
+        title: PropTypes.Requireable<string>;
+        subtitle: PropTypes.Requireable<string>;
+        contentType: PropTypes.Requireable<string>;
+        showEndText: PropTypes.Requireable<boolean>;
+        showSwitch: PropTypes.Requireable<boolean>;
+        switchOn: PropTypes.Requireable<boolean>;
+        invisible: PropTypes.Requireable<boolean>;
+        onSwitch: PropTypes.Requireable<(...args: any[]) => any>;
+        hasShadow: PropTypes.Requireable<boolean>;
+        showEndImage: PropTypes.Requireable<boolean>;
+        leftEndImage: PropTypes.Requireable<any>;
+        rightEndImage: PropTypes.Requireable<any>;
+        leftEndHighlightImage: PropTypes.Requireable<any>;
+        rightEndHighlightImage: PropTypes.Requireable<any>;
+        leftEndDisImage: PropTypes.Requireable<any>;
+        rightEndDisImage: PropTypes.Requireable<any>;
+        accessible: PropTypes.Requireable<boolean>;
+        accessibilityLabel: PropTypes.Requireable<string | number>;
+        accessibilityHint: PropTypes.Requireable<string | number>;
+        sliderAccessibilityLabel: PropTypes.Requireable<string | number>;
+        sliderAccessibilityHint: PropTypes.Requireable<string | number>;
+    };
+    static defaultProps: {
+        options: never[];
+        min: number;
+        max: number;
+        step: number;
+        initValue: number;
+        onSlidingChange: typeof log;
+        onSlidingComplete: typeof log;
+        disabled: boolean;
+        switchDisabled: boolean;
+        themeColor: string;
+        title: string;
+        subtitle: string;
+        contentType: string;
+        showEndText: boolean;
+        showSwitch: boolean;
+        switchOn: boolean;
+        onSwitch: typeof log;
+        hasShadow: boolean;
+        showEndImage: string;
+        invisible: boolean;
+        leftEndImage: string;
+        rightEndImage: string;
+        leftEndHighlightImage: string;
+        rightEndHighlightImage: string;
+    };
+    onSlidingChange: (v: any) => void;
+    onSlidingComplete: (v: any) => void;
+    onAccessibilityAction: ({ nativeEvent: { actionName } }: {
+        nativeEvent: {
+            actionName: any;
+        };
+    }) => void;
+    render(): JSX.Element | null;
+}
