@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "hj-components-rn": ["./src/index"]
+      "hj-components-rn": ["./src/index"],
+      "mhui-rn": ["node_modules/mhui-rn/*"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
