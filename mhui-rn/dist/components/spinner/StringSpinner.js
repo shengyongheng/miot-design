@@ -91,14 +91,15 @@ class StringSpinner extends React.Component {
       pickerStyle.unitTextColor = `${pickerStyle.unitTextColor}text`;
     }
 
-    return <StringPicker {...this.gestureHandlers} {...this.props} {...pickerStyle} {...getAccessibilityConfig({
-      accessible: false
-    })} onValueChanged={event => {
-      if (this.props.onValueChanged) {
-        this.props.onValueChanged({ ...event.nativeEvent
-        });
-      }
-    }} />; // @native end
+    return <StringPicker {...this.gestureHandlers} {...this.props} {...pickerStyle}
+      {...getAccessibilityConfig({ accessible: false })}
+      onValueChanged={event => {
+        if (this.props.onValueChanged) {
+          this.props.onValueChanged({
+            ...event.nativeEvent
+          });
+        }
+      }} />; // @native end
   }
 
 }

@@ -1,49 +1,50 @@
 ---
-title: CheckBox
+title: DragGear
 group:
-  title: CheckBox
+  title: DragGear
 nav:
   title: '组件'
   path: /components
 ---
 
-# Button 按钮
+# ListItem 普通列表项
 
 ## 简介
 
-Button 组件是一个基础的交互元素，用于触发操作。
+常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
 
 ## 用法
 
-```jsx
+```tsx
+import DragGear from 'miot/ui/Gear/DragGear';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-// @ts-ignore
-import Checkbox from 'miot/ui/Checkbox';
 
-const Index = () => {
-  const [checked, setChecked] = useState(false);
+const App: React.FC<any> = () => {
+  const [selectIndex, setSelectIndex] = useState<number>(1);
+
   return (
     <>
-      <Text>// 方形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
-      />
-      <Text>// 圆形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60, borderRadius: 30 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
+      <Text>// 参数和 NormalGear 一致</Text>
+      <DragGear
+        options={['off', '1', '2', '3', '4', '5']}
+        normalStyle={{ width: 60 }}
+        margin={20}
+        selectColor={'green'}
+        textStyle={{ fontSize: 16, fontFamily: 'DS-Digital' }}
+        maxWidth={300}
+        selectIndex={selectIndex}
+        onSelect={(index: number) => {
+          setSelectIndex(index);
+          console.log(`select${index}`);
+        }}
+        containerStyle={{ backgroundColor: '#fff' }}
       />
     </>
   );
 };
 
-export default Index;
+export default App;
 ```
 
 ## API

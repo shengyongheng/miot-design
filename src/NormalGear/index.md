@@ -1,49 +1,45 @@
 ---
-title: CheckBox
+title: NormalGear
 group:
-  title: CheckBox
+  title: NormalGear
 nav:
   title: '组件'
   path: /components
 ---
 
-# Button 按钮
+# ListItem 普通列表项
 
 ## 简介
 
-Button 组件是一个基础的交互元素，用于触发操作。
+常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
 
 ## 用法
 
-```jsx
+```tsx
+import NormalGear from 'miot/ui/Gear/NormalGear';
 import React, { useState } from 'react';
-import { Text } from 'react-native';
-// @ts-ignore
-import Checkbox from 'miot/ui/Checkbox';
 
-const Index = () => {
-  const [checked, setChecked] = useState(false);
+const App: React.FC<any> = () => {
+  const [selectIndex] = useState<number>(1);
+
   return (
     <>
-      <Text>// 方形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
-      />
-      <Text>// 圆形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60, borderRadius: 30 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
+      <NormalGear
+        options={['off', '1', '2', '3', '4', '5']}
+        normalStyle={{ width: 60 }}
+        margin={20}
+        selectColor={'green'}
+        textStyle={{ fontSize: 16, fontFamily: 'DS-Digital' }}
+        maxWidth={300}
+        selectIndex={selectIndex}
+        onSelect={(index) => console.log(`select${index}`)}
+        containerStyle={{ backgroundColor: '#fff' }}
       />
     </>
   );
 };
 
-export default Index;
+export default App;
 ```
 
 ## API

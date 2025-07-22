@@ -112,18 +112,18 @@ export default class Checkable extends React.Component {
     }} {...getAccessibilityConfig({
       accessible: false
     })}>
-        <Surface width={this.leftWidth} height={this.containerHeight} style={{
+      <Surface width={this.leftWidth} height={this.containerHeight} style={{
         backgroundColor: 'transparent'
       }}>
-          <AnimatedRectangle degree={degree} fill="#fff" width={this.leftRectangleWidth} height={this.rectangleHeight} y={this.intersectionHeight} x={this.leftWidth} />
-        </Surface>
-        <Surface width={this.rightWidth} height={this.containerHeight} style={{
+        <AnimatedRectangle degree={degree} fill="#fff" width={this.leftRectangleWidth} height={this.rectangleHeight} y={this.intersectionHeight} x={this.leftWidth} />
+      </Surface>
+      <Surface width={this.rightWidth} height={this.containerHeight} style={{
         backgroundColor: 'transparent',
         marginLeft: -0.5
       }}>
-          <AnimatedRectangle degree={-degree} fill="#fff" width={this.state.animatedWidth} height={this.rectangleHeight} y={this.intersectionHeight} x={0} />
-        </Surface>
-      </View>;
+        <AnimatedRectangle degree={-degree} fill="#fff" width={this.state.animatedWidth} height={this.rectangleHeight} y={this.intersectionHeight} x={0} />
+      </Surface>
+    </View>;
   }
 
 }

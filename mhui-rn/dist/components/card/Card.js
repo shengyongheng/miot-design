@@ -151,8 +151,8 @@ class Card extends React.Component {
         style: shadowAndroidStyle
       };
       return <BoxShadow setting={shadowAndroid}>
-          <CardBase {...this.props} cardStyle={cardStyle} />
-        </BoxShadow>;
+        <CardBase {...this.props} cardStyle={cardStyle} />
+      </BoxShadow>;
     }
   }
   /**

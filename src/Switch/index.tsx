@@ -5,7 +5,7 @@ import React from 'react';
 const Index: React.FC<any> = () => {
   return (
     <Switch
-      style={{ width: 60, height: 30 }}
+      style={{ width: 20, height: 10 }}
       onTintColor="red"
       tintColor="blue"
       value={true}

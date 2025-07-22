@@ -17,17 +17,23 @@ Button 组件是一个基础的交互元素，用于触发操作。
 
 ```jsx
 import React from 'react';
+import { Text } from 'react-native';
 import { Switch } from 'mhui-rn';
 
 export default () => (
-  <Switch
-    style={{ width: 60, height: 30 }}
-    onTintColor="red"
-    tintColor="blue"
-    value={true}
-    disabled={false}
-    onValueChange={(value) => {}}
-  />
+  <>
+    <Text>基础使用</Text>
+    <Switch style={{ width: 60, height: 30 }} />
+    <Text>尺寸</Text>
+    <Switch style={{ width: 20, height: 10 }} />
+    <Text>选中</Text>
+    <Switch
+      style={{ width: 20, height: 10 }}
+      onTintColor="red"
+      tintColor="blue"
+      value={true}
+    />
+  </>
 );
 ```
 

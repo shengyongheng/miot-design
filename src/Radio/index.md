@@ -1,7 +1,7 @@
 ---
-title: CheckBox
+title: Radio
 group:
-  title: CheckBox
+  title: Radio
 nav:
   title: '组件'
   path: /components
@@ -16,34 +16,41 @@ Button 组件是一个基础的交互元素，用于触发操作。
 ## 用法
 
 ```jsx
-import React, { useState } from 'react';
-import { Text } from 'react-native';
 // @ts-ignore
-import Checkbox from 'miot/ui/Checkbox';
+import Radio from 'miot/ui/Radio';
+import React, { useState } from 'react';
 
-const Index = () => {
-  const [checked, setChecked] = useState(false);
+const App = () => {
+  const [disabled] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const changeCheck = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <>
-      <Text>// 方形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
-      />
-      <Text>// 圆形</Text>
-      <Checkbox
-        style={{ width: 60, height: 60, borderRadius: 30 }}
-        checked={checked}
-        checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
+      <Radio
+        isChecked={isChecked}
+        changeCheck={changeCheck}
+        id={1}
+        bigCircleStyle={{
+          borderWidth: 4,
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+        }}
+        checkedBigCircleStyle={{
+          borderColorChecked: '#00C',
+          backgroundColorChecked: '#33F',
+          borderColor: '#666',
+          backgroundColor: '#999',
+        }}
+        disabled={disabled}
       />
     </>
   );
 };
 
-export default Index;
+export default App;
 ```
 
 ## API
