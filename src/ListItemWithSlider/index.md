@@ -1,7 +1,9 @@
 ---
 title: ListItemWithSlider
 group:
-  title: ListItemWithSlider
+  path: '/basic'
+  title: 基础组件
+  order: 2
 nav:
   title: '组件'
   path: /components

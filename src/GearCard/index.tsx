@@ -15,7 +15,7 @@ const Index: React.FC<any> = () => {
         showSwitch={true}
         sliderProps={{ value: 10, showDots: 0.25 }}
         sliderStyle={{ minimumTrackTintColor: 'red', thumbTintColor: 'white' }}
-        options={Array.from({ length: 40 }, (v, i) => i * 5)}
+        options={Array.from({ length: 40 }, (_: any, i) => i * 5)}
       />
       <GearCard
         title="最简单最弹窗asd"

@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'hsy-components-rn',
+  title: 'Miot-Design',
   favicon: './assets/logo.jpg',
   logo: '/assets/logo.jpg',
   outputPath: 'docs-dist',
@@ -15,6 +15,10 @@ export default defineConfig({
   },
   themeConfig: {
     name: '你好',
+    prefersColor: { default: 'light', switch: true },
+    socialLinks: {
+      github: 'https://github.com/tastien',
+    },
   },
   // more config: https://d.umijs.org/config
 });

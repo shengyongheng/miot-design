@@ -1,19 +1,24 @@
 ---
-title: CheckBox
+title: Checkbox
+order: 0
 group:
-  title: CheckBox
+  path: '/basic'
+  title: 基础组件
+  order: 2
 nav:
   title: '组件'
   path: /components
 ---
 
-# Button 按钮
+# Checkbox 复选框
 
 ## 简介
 
-Button 组件是一个基础的交互元素，用于触发操作。
+Checkbox 组件是一个基础的交互元素，用于触发操作。
 
 ## 用法
+
+<!-- <code src="./index.tsx"></code> -->
 
 ```jsx
 import React, { useState } from 'react';
@@ -25,14 +30,14 @@ const Index = () => {
   const [checked, setChecked] = useState(false);
   return (
     <>
-      <Text>// 方形</Text>
+      <Text>方形</Text>
       <Checkbox
         style={{ width: 60, height: 60 }}
         checked={checked}
         checkedColor="lightgreen"
         onValueChange={(checked) => setChecked(checked)}
       />
-      <Text>// 圆形</Text>
+      <Text>圆形</Text>
       <Checkbox
         style={{ width: 60, height: 60, borderRadius: 30 }}
         checked={checked}

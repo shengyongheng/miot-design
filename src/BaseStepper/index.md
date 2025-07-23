@@ -1,7 +1,9 @@
 ---
 title: BaseStepper
 group:
-  title: BaseStepper
+  path: '/business'
+  title: 业务组件
+  order: 2
 nav:
   title: '组件'
   path: /components

@@ -1,7 +1,10 @@
 ---
 title: Switch
+order: 1
 group:
-  title: Switch
+  path: '/basic'
+  title: 基础组件
+  order: 1
 nav:
   title: '组件'
   path: /components

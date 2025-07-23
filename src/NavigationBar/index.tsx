@@ -14,7 +14,7 @@ const Index: React.FC<any> = () => {
       titleStyle={{ fontSize: 17, color: 'red' }}
       subtitleStyle={{ fontSize: 10, color: 'green' }}
       valueStyle={{ fontSize: 10, color: 'yellow' }}
-      onPress={(_) => console.log(4)}
+      onPress={(_: any) => console.log(4)}
       separator={<>/</>}
     />
   );

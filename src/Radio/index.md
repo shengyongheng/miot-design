@@ -1,17 +1,19 @@
 ---
 title: Radio
 group:
-  title: Radio
+  path: '/basic'
+  title: 基础组件
+  order: 1
 nav:
   title: '组件'
   path: /components
 ---
 
-# Button 按钮
+# Radio 单选框
 
 ## 简介
 
-Button 组件是一个基础的交互元素，用于触发操作。
+Radio 组件是一个基础的交互元素，用于触发操作。
 
 ## 用法
 

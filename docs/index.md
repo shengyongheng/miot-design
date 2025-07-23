@@ -1,7 +1,7 @@
 ---
-title: lalala-components-rn - 基于 dumi 和 TypeScript 实现的移动端组件库
+title: Miot-Design - 基于 dumi 和 Miot UI 实现的移动端组件库
 hero:
-  title: lalala-components-rn
+  title: Miot-Design
   desc: 移动端组件库
   actions:
     - text: 开始使用
