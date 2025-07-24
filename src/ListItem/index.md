@@ -1,8 +1,8 @@
 ---
 title: ListItem
 group:
-  path: '/basic'
-  title: 基础组件
+  path: '/business'
+  title: 业务组件
   order: 2
 nav:
   title: '组件'
