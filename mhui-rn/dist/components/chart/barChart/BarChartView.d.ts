@@ -1,0 +1,31 @@
+import React from 'react';
+import { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+import { GroupPointsDataType, MultiGroupsPointsDataType, LabelStyle } from '../interface';
+export interface BarChartViewPropsType {
+    useScroll?: boolean;
+    multiple?: boolean;
+    width: number;
+    height: number;
+    paddingHorizontal?: number;
+    paddingBottom?: number;
+    xAxisMaxSplitNumber?: number;
+    showXAxisLabels?: boolean;
+    xAxisData: Array<string | number>;
+    xAxisSelectedDataStyle?: LabelStyle;
+    xAxisDataStyle?: LabelStyle;
+    xAxisDataOffset?: number;
+    itemAlign?: 'start' | 'middle';
+    barWidth?: number;
+    barRawFill?: string | string[];
+    barSelectedFill?: string | string[];
+    barUnderlayColor?: string | string[];
+    barBorderTopRadius?: number;
+    gridUnderlayColor?: string;
+    girdActiveOpacity?: number;
+    barPoints?: GroupPointsDataType | MultiGroupsPointsDataType;
+    initialSelectedIndex?: number;
+    onChangeIndex?: (identifier: number) => void;
+    onScroll?: ((event: NativeSyntheticEvent<NativeScrollEvent>) => void);
+}
+declare const MemoBarChartView: React.MemoExoticComponent<(props: BarChartViewPropsType) => JSX.Element | null>;
+export default MemoBarChartView;
