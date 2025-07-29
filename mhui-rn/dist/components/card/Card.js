@@ -5,21 +5,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 import { BoxShadow } from 'react-native-shadow';
-import CardBase from "./CardBase";
-import { AccessibilityPropTypes } from "../../utils/accessibility-helper";
-import { referenceReport } from "../../decorators/reportDecorator";
-import { adjustSize } from "../../utils/sizes";
-const {
-  width
-} = Dimensions.get('window');
+import CardBase from './CardBase';
+import { AccessibilityPropTypes } from '../../utils/accessibility-helper';
+import { referenceReport } from '../../decorators/reportDecorator';
+import { adjustSize } from '../../utils/sizes';
+const { width } = Dimensions.get('window');
 const DURATION = 250;
 const DEFAULT_STYLE = {
   HEIGHT: 66,
   WIDTH: width - adjustSize(36 * 2),
   RADIUS: 8,
   MARGIN_TOP: {
-    marginTop: 15
-  }
+    marginTop: 15,
+  },
 };
 /**
  * @export
@@ -71,7 +69,7 @@ class Card extends React.Component {
     accessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
     accessibilityHint: AccessibilityPropTypes.accessibilityHint,
     dismissAccessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
-    dismissAccessibilityHint: AccessibilityPropTypes.accessibilityHint
+    dismissAccessibilityHint: AccessibilityPropTypes.accessibilityHint,
   };
   static defaultProps = {
     visible: true,
@@ -82,17 +80,16 @@ class Card extends React.Component {
     shadowColor: '#000',
     shadowOpacity: 0.03,
     unlimitedHeightEnable: false,
-    allowFontScaling: true
+    allowFontScaling: true,
   };
 
   constructor(props, context) {
     super(props, context);
     referenceReport('Card');
     this.state = {
-      showShadow: this.props.visible && this.props.showShadow
+      showShadow: this.props.visible && this.props.showShadow,
     };
   } // android 卡片动效对于阴影的处理
-
 
   UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.showShadow === false) return;
@@ -101,44 +98,52 @@ class Card extends React.Component {
     if (newProps.visible === false) {
       // 隐藏
       this.setState({
-        showShadow: false
+        showShadow: false,
       });
     } else if (newProps.visible === true) {
       // 显示
-      setTimeout(() => this.setState({
-        showShadow: true
-      }), DURATION);
+      setTimeout(
+        () =>
+          this.setState({
+            showShadow: true,
+          }),
+        DURATION,
+      );
     }
   }
 
   renderCardIOS() {
-    const shadowIOS = this.props.showShadow ? {
-      position: 'relative',
-      shadowColor: this.props.shadowColor,
-      shadowOpacity: this.props.shadowOpacity,
-      shadowOffset: {
-        width: 0,
-        height: 8
-      }
-    } : {};
-    const cardStyle = StyleSheet.flatten([{}, DEFAULT_STYLE.MARGIN_TOP, this.props.cardStyle, shadowIOS]);
+    const shadowIOS = this.props.showShadow
+      ? {
+          position: 'relative',
+          shadowColor: this.props.shadowColor,
+          shadowOpacity: this.props.shadowOpacity,
+          shadowOffset: {
+            width: 0,
+            height: 8,
+          },
+        }
+      : {};
+    const cardStyle = StyleSheet.flatten([
+      {},
+      DEFAULT_STYLE.MARGIN_TOP,
+      this.props.cardStyle,
+      shadowIOS,
+    ]);
     return <CardBase {...this.props} cardStyle={cardStyle} />;
   }
 
   renderCardAndroid() {
     if (!this.state.showShadow) {
-      const cardStyle = StyleSheet.flatten([{}, DEFAULT_STYLE.MARGIN_TOP, this.props.cardStyle]);
+      const cardStyle = StyleSheet.flatten([
+        {},
+        DEFAULT_STYLE.MARGIN_TOP,
+        this.props.cardStyle,
+      ]);
       return <CardBase {...this.props} cardStyle={cardStyle} />;
     } else {
-      const {
-        width,
-        height,
-        borderRadius
-      } = this.props.cardStyle;
-      const {
-        shadowAndroidStyle,
-        cardStyle
-      } = this.getCorrectStyle();
+      const { width, height, borderRadius } = this.props.cardStyle;
+      const { shadowAndroidStyle, cardStyle } = this.getCorrectStyle();
       const shadowAndroid = {
         width: width || DEFAULT_STYLE.WIDTH,
         height: height || DEFAULT_STYLE.HEIGHT,
@@ -148,22 +153,23 @@ class Card extends React.Component {
         opacity: this.props.shadowOpacity,
         x: 0,
         y: 6,
-        style: shadowAndroidStyle
+        style: shadowAndroidStyle,
       };
-      return <BoxShadow setting={shadowAndroid}>
-        <CardBase {...this.props} cardStyle={cardStyle} />
-      </BoxShadow>;
+      return (
+        <BoxShadow setting={shadowAndroid}>
+          <CardBase {...this.props} cardStyle={cardStyle} />
+        </BoxShadow>
+      );
     }
   }
   /**
    * @description 筛选出`this.props.cardStyle`中的定位信息，传给`shadowAndroid`的`style`
    */
 
-
   getCorrectStyle() {
     const shadowAndroidStyle = Object.assign({}, DEFAULT_STYLE.MARGIN_TOP);
     const cardStyle = {};
-    Object.keys(this.props.cardStyle).forEach(key => {
+    Object.keys(this.props.cardStyle).forEach((key) => {
       if (key.toString().startsWith('margin')) {
         shadowAndroidStyle[key] = this.props.cardStyle[key];
       } else {
@@ -172,17 +178,17 @@ class Card extends React.Component {
     });
     return {
       shadowAndroidStyle,
-      cardStyle
+      cardStyle,
     };
   }
 
   render() {
     return Platform.select({
       android: this.renderCardAndroid(),
-      ios: this.renderCardIOS()
+      ios: this.renderCardIOS(),
+      default: this.renderCardAndroid(),
     });
   }
-
 }
 
 export default Card;
