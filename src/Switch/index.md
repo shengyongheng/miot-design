@@ -18,26 +18,44 @@ Button 组件是一个基础的交互元素，用于触发操作。
 
 ## 用法
 
-```jsx
-import React from 'react';
+```tsx
+import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { Switch } from 'mhui-rn';
 
-export default () => (
-  <>
-    <Text>基础使用</Text>
-    <Switch style={{ width: 60, height: 30 }} />
-    <Text>尺寸</Text>
-    <Switch style={{ width: 20, height: 10 }} />
-    <Text>选中</Text>
-    <Switch
-      style={{ width: 20, height: 10 }}
-      onTintColor="red"
-      tintColor="blue"
-      value={true}
-    />
-  </>
-);
+const App: React.FC<any> = () => {
+  const [value, setValue] = useState(true);
+
+  return (
+    <>
+      <Text>基础使用</Text>
+      <Switch
+        onTintColor="red"
+        tintColor="blue"
+        value={value}
+        onValueChange={(value: boolean) => setValue(value)}
+      />
+      <Text>尺寸</Text>
+      <Switch
+        style={{ width: 20, height: 10 }}
+        onTintColor="red"
+        tintColor="blue"
+        value={value}
+        onValueChange={(value: boolean) => setValue(value)}
+      />
+      <Text>选中</Text>
+      <Switch
+        style={{ width: 20, height: 10 }}
+        onTintColor="red"
+        tintColor="blue"
+        value={value}
+        onValueChange={(value: boolean) => setValue(value)}
+      />
+    </>
+  );
+};
+
+export default App;
 ```
 
 ## API

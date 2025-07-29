@@ -1,10 +1,10 @@
 // @ts-nocheck
 
 /* eslint-disable */
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
-import { Styles } from "../../resources";
+import { Styles } from '../../resources';
 /**
  * 分割线类型
  */
@@ -18,7 +18,7 @@ const TYPE = {
   /**
    * 纵向
    */
-  COLUMN: 'column'
+  COLUMN: 'column',
 };
 /**
  * @export public
@@ -36,10 +36,10 @@ const TYPE = {
 class Separator extends React.PureComponent {
   static propTypes = {
     type: PropTypes.string,
-    style: PropTypes.any
+    style: PropTypes.any,
   };
   static defaultProps = {
-    type: TYPE.ROW
+    type: TYPE.ROW,
   };
 
   render() {
@@ -52,7 +52,7 @@ class Separator extends React.PureComponent {
       if (this.props.style && this.props.style.height) {
         if (this.props.style.height > 1) {
           maxHeight = {
-            height: 1
+            height: 1,
           };
         }
       }
@@ -60,16 +60,20 @@ class Separator extends React.PureComponent {
       separatorContainer = {
         backgroundColor: 'transparent',
         height: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
       };
-      separatorStyle = StyleSheet.flatten([Styles.common.separator, this.props.style, maxHeight]);
+      separatorStyle = StyleSheet.flatten([
+        Styles.common.separator,
+        this.props.style,
+        maxHeight,
+      ]);
     } else {
       let maxWidth = {};
 
       if (this.props.style && this.props.style.width) {
         if (this.props.style.width > 1) {
           maxWidth = {
-            width: 1
+            width: 1,
           };
         }
       }
@@ -77,22 +81,32 @@ class Separator extends React.PureComponent {
       separatorContainer = {
         backgroundColor: 'transparent',
         width: 1,
-        alignItems: 'center'
+        alignItems: 'center',
       };
-      separatorStyle = StyleSheet.flatten([{
-        width: StyleSheet.hairlineWidth,
-        backgroundColor: Styles.common.hairlineColor
-      }, this.props.style, maxWidth]);
+      separatorStyle = StyleSheet.flatten([
+        {
+          width: StyleSheet.hairlineWidth,
+          backgroundColor: Styles.common.hairlineColor,
+        },
+        this.props.style,
+        maxWidth,
+      ]);
     }
 
     return Platform.select({
-      android: <View style={separatorContainer}>
-    <View style={separatorStyle} />
-  </View>,
-      ios: <View style={separatorStyle} />
+      android: (
+        <View style={separatorContainer}>
+          <View style={separatorStyle} />
+        </View>
+      ),
+      ios: <View style={separatorStyle} />,
+      default: (
+        <View style={separatorContainer}>
+          <View style={separatorStyle} />
+        </View>
+      ),
     });
   }
-
 }
 
 export default Separator;

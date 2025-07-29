@@ -20,7 +20,7 @@ Checkbox 组件是一个基础的交互元素，用于触发操作。
 
 <!-- <code src="./index.tsx"></code> -->
 
-```jsx
+```tsx
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 // @ts-ignore
@@ -28,21 +28,33 @@ import Checkbox from 'miot/ui/Checkbox';
 
 const Index = () => {
   const [checked, setChecked] = useState(false);
+  const [disabled] = useState(true);
+
   return (
     <>
       <Text>方形</Text>
       <Checkbox
-        style={{ width: 60, height: 60 }}
         checked={checked}
         checkedColor="lightgreen"
         onValueChange={(checked) => setChecked(checked)}
       />
       <Text>圆形</Text>
       <Checkbox
-        style={{ width: 60, height: 60, borderRadius: 30 }}
+        checked={checked}
+        style={{ borderRadius: 30 }}
+        checkedColor="lightgreen"
+        onValueChange={(checked) => {
+          console.log('checked:', checked);
+          setChecked(checked);
+        }}
+      />
+      <Text>禁用</Text>
+      <Checkbox
+        style={{ borderRadius: 30 }}
+        disabled={disabled}
         checked={checked}
         checkedColor="lightgreen"
-        onValueChange={(checked) => setChecked(checked)}
+        onValueChange={(checked: boolean) => setChecked(checked)}
       />
     </>
   );

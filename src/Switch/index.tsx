@@ -1,17 +1,19 @@
 // @ts-ignore
 import Switch from 'miot/ui/Switch';
-import React from 'react';
+import React, { useState } from 'react';
 
-const Index: React.FC<any> = () => {
+const App: React.FC<any> = () => {
+  const [value, setValue] = useState(false);
+
   return (
     <Switch
       style={{ width: 20, height: 10 }}
       onTintColor="red"
       tintColor="blue"
-      value={true}
-      disabled={false}
+      value={value}
+      onValueChange={(value: boolean) => setValue(value)}
     />
   );
 };
 
-export default Index;
+export default App;
