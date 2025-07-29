@@ -3,17 +3,25 @@
 /* eslint-disable */
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View, ViewPropTypes } from 'react-native';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  ViewPropTypes,
+} from 'react-native';
 import { RkButton } from 'react-native-ui-kitten';
-import { Styles } from "../../resources";
-import { AccessibilityRoles, AccessibilityPropTypes, getAccessibilityConfig } from "../../utils/accessibility-helper";
-import { referenceReport } from "../../decorators/reportDecorator";
-import { ConfigContext } from "../configProvider";
-import { FontPrimary } from "../../constants/font";
-const {
-  width,
-  height
-} = Dimensions.get('window');
+import { Styles } from '../../resources';
+import {
+  AccessibilityRoles,
+  AccessibilityPropTypes,
+  getAccessibilityConfig,
+} from '../../utils/accessibility-helper';
+import { referenceReport } from '../../decorators/reportDecorator';
+import { ConfigContext } from '../configProvider';
+import { FontPrimary } from '../../constants/font';
+const { width, height } = Dimensions.get('window');
 const ratio = 0.2; // 中间图片距离顶部的距离和页面高度的比例
 
 const imageMarginTop = height * ratio;
@@ -21,7 +29,7 @@ const imageContainerSize = 138;
 const imageWidth = 84;
 const imageHeight = 114;
 
-const imageSource = require("../../resources/images/blank_page_icon@3x.png");
+const imageSource = require('../../resources/images/blank_page_icon@3x.png');
 
 const padding = 40; // 正文描述文字距离边界左右间距
 
@@ -41,7 +49,7 @@ const TYPE = {
   /**
    * 底部是下划线超链接
    */
-  UNDERLINE: 'underline'
+  UNDERLINE: 'underline',
 };
 Object.freeze(TYPE);
 /**
@@ -90,13 +98,13 @@ class BlankPage extends React.Component {
     extraInfo: PropTypes.string,
     accessible: AccessibilityPropTypes.accessible,
     accessibilityHint: AccessibilityPropTypes.accessibilityHint,
-    accessibilityLabel: AccessibilityPropTypes.accessibilityLabel
+    accessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
   };
   static defaultProps = {
     type: TYPE.BUTTON,
     underline: {},
     button: {},
-    icon: imageSource
+    icon: imageSource,
   };
 
   constructor(props) {
@@ -108,102 +116,147 @@ class BlankPage extends React.Component {
    * @enum {string}
    */
 
-
   static TYPE = TYPE;
   /**
    * 中间的图标 + 文字
    */
 
   renderCenter() {
-    const {
-      theme
-    } = this.context;
-    return <View style={styles.center}>
-      <View style={styles.imageContainer} {...getAccessibilityConfig({
-        accessible: this.props.accessible,
-        accessibilityRole: AccessibilityRoles.text,
-        accessibilityLabel: this.props.accessibilityLabel || this.props.message,
-        accessibilityHint: this.props.accessibilityHint
-      })}>
-        <Image source={this.props.icon} style={[styles.image, this.props.iconStyle]} resizeMode="contain" />
+    const { theme } = this.context;
+    return (
+      <View style={styles.center}>
+        <View
+          style={styles.imageContainer}
+          {...getAccessibilityConfig({
+            accessible: this.props.accessible,
+            accessibilityRole: AccessibilityRoles.text,
+            accessibilityLabel:
+              this.props.accessibilityLabel || this.props.message,
+            accessibilityHint: this.props.accessibilityHint,
+          })}
+        >
+          <Image
+            source={this.props.icon}
+            style={[styles.image, this.props.iconStyle]}
+            resizeMode="contain"
+          />
+        </View>
+        <Text
+          numberOfLines={1}
+          style={[
+            styles.message,
+            {
+              color: theme.colorGrayLighter,
+            },
+          ]}
+        >
+          {this.props.message}
+        </Text>
+        {this.props.desc ? (
+          <Text
+            numberOfLines={3}
+            style={[
+              styles.desc,
+              {
+                marginTop: 10,
+                color: theme.colorGrayLighter,
+              },
+            ]}
+          >
+            {this.props.desc || ''}
+          </Text>
+        ) : null}
       </View>
-      <Text numberOfLines={1} style={[styles.message, {
-        color: theme.colorGrayLighter
-      }]}>
-        {this.props.message}
-      </Text>
-      {this.props.desc ? <Text numberOfLines={3} style={[styles.desc, {
-        marginTop: 10,
-        color: theme.colorGrayLighter
-      }]}>
-        {this.props.desc || ''}
-      </Text> : null}
-    </View>;
+    );
   }
   /**
    * 底部的按钮或者下划线
    */
 
-
   renderBottom() {
-    const {
-      theme
-    } = this.context;
+    const { theme } = this.context;
 
     if (this.props.type === TYPE.UNDERLINE) {
-      const {
-        text,
-        callback,
-        textStyle
-      } = this.props.underline;
-      return <View style={[styles.bottom, {
-        marginBottom: safeBottom * 2
-      }]}>
-        <Text onPress={() => this.onPress(callback)} numberOfLines={1} style={[styles.desc, {
-          textDecorationLine: 'underline',
-          color: theme.colorPrimary,
-          textAlign: 'center'
-        }, textStyle]} {...getAccessibilityConfig({
-          accessible: this.props.accessible,
-          accessibilityRole: AccessibilityRoles.link,
-          accessibilityLabel: text,
-          accessibilityHint: this.props.accessibilityHint
-        })}>
-          {text}
-        </Text>
-      </View>;
+      const { text, callback, textStyle } = this.props.underline;
+      return (
+        <View
+          style={[
+            styles.bottom,
+            {
+              marginBottom: safeBottom * 2,
+            },
+          ]}
+        >
+          <Text
+            onPress={() => this.onPress(callback)}
+            numberOfLines={1}
+            style={[
+              styles.desc,
+              {
+                textDecorationLine: 'underline',
+                color: theme.colorPrimary,
+                textAlign: 'center',
+              },
+              textStyle,
+            ]}
+            {...getAccessibilityConfig({
+              accessible: this.props.accessible,
+              accessibilityRole: AccessibilityRoles.link,
+              accessibilityLabel: text,
+              accessibilityHint: this.props.accessibilityHint,
+            })}
+          >
+            {text}
+          </Text>
+        </View>
+      );
     }
 
-    const {
-      text,
-      callback,
-      buttonStyle,
-      textStyle
-    } = this.props.button;
-    return <View style={styles.bottom}>
-      {this.props.extraInfo ? <Text numberOfLines={2} style={[styles.desc, {
-        color: theme.colorGrayLighter
-      }]} {...getAccessibilityConfig({
-        accessible: this.props.accessible,
-        accessibilityRole: AccessibilityRoles.text,
-        accessibilityLabel: this.props.extraInfo,
-        accessibilityHint: this.props.accessibilityHint
-      })}>
-        {this.props.extraInfo}
-      </Text> : null}
-      <RkButton style={[styles.buttonContainer, {
-        backgroundColor: theme.colorPrimary
-      }, buttonStyle]} onPress={() => this.onPress(callback)} activeOpacity={0.8} {...getAccessibilityConfig({
-        accessible: this.props.accessible,
-        accessibilityRole: AccessibilityRoles.button,
-        accessibilityLabel: text,
-        accessibilityHint: this.props.accessibilityHint
-      })}>
-        <Text style={[styles.buttonText, FontPrimary, textStyle]}>
-          {text}
-        </Text>
-      </RkButton>
-    </View>;
+    const { text, callback, buttonStyle, textStyle } = this.props.button;
+    return (
+      <View style={styles.bottom}>
+        {this.props.extraInfo ? (
+          <Text
+            numberOfLines={2}
+            style={[
+              styles.desc,
+              {
+                color: theme.colorGrayLighter,
+              },
+            ]}
+            {...getAccessibilityConfig({
+              accessible: this.props.accessible,
+              accessibilityRole: AccessibilityRoles.text,
+              accessibilityLabel: this.props.extraInfo,
+              accessibilityHint: this.props.accessibilityHint,
+            })}
+          >
+            {this.props.extraInfo}
+          </Text>
+        ) : null}
+        <RkButton
+          style={[
+            styles.buttonContainer,
+            {
+              backgroundColor: theme.colorPrimary,
+            },
+            buttonStyle,
+          ]}
+          onPress={() => this.onPress(callback)}
+          activeOpacity={0.8}
+          {...getAccessibilityConfig({
+            accessible: this.props.accessible,
+            accessibilityRole: AccessibilityRoles.button,
+            accessibilityLabel: text,
+            accessibilityHint: this.props.accessibilityHint,
+          })}
+        >
+          <Text style={[styles.buttonText, FontPrimary, textStyle]}>
+            {text}
+          </Text>
+        </RkButton>
+      </View>
+    );
   }
 
   onPress(callback) {
@@ -215,63 +268,64 @@ class BlankPage extends React.Component {
   }
 
   render() {
-    const {
-      theme
-    } = this.context;
-    return <View style={[styles.container, theme.colorBackground]}>
-      {this.renderCenter()}
-      <View style={{
-        flex: 1
-      }} />
-      {this.renderBottom()}
-    </View>;
+    const { theme } = this.context;
+    return (
+      <View style={[styles.container]}>
+        {this.renderCenter()}
+        <View
+          style={{
+            flex: 1,
+          }}
+        />
+        {this.renderBottom()}
+      </View>
+    );
   }
-
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width
+    width,
   },
   center: {
     marginTop: imageMarginTop,
     width,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   imageContainer: {
     width: imageContainerSize,
     height: imageContainerSize,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   image: {
     width: imageWidth,
     height: imageHeight,
-    marginTop: 5
+    marginTop: 5,
   },
   message: {
     width,
     fontSize: 15,
     color: '#999',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   desc: {
     width,
     paddingHorizontal: padding,
     fontSize: 13,
     color: '#999',
-    lineHeight: 18
+    lineHeight: 18,
   },
   bottom: {
     width,
-    marginBottom: safeBottom
+    marginBottom: safeBottom,
   },
   buttonContainer: {
     width: width - Styles.common.padding * 2,
     height: 42,
     borderRadius: 5,
     marginTop: 21,
-    marginHorizontal: Styles.common.padding
+    marginHorizontal: Styles.common.padding,
   },
   buttonText: {
     flex: 1,
@@ -279,7 +333,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#ffffff',
-    lineHeight: 18
-  }
+    lineHeight: 18,
+  },
 });
 export default BlankPage;

@@ -2,14 +2,28 @@
 // @ts-nocheck
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View, Platform, Animated, Easing } from 'react-native';
-import { Styles } from "../../resources";
-import Checkbox from "../checkbox/Checkbox";
-import AbstractDialog from "./AbstractDialog";
-import { ConfigContext } from "../configProvider";
-import { adjustSize } from "../../utils/sizes";
-import { AccessibilityPropTypes, AccessibilityRoles, getAccessibilityConfig } from "../../utils/accessibility-helper";
-import { referenceReport } from "../../decorators/reportDecorator";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  Platform,
+  Animated,
+  Easing,
+} from 'react-native';
+import { Styles } from '../../resources';
+import Checkbox from '../checkbox/Checkbox';
+import AbstractDialog from './AbstractDialog';
+import { ConfigContext } from '../configProvider';
+import { adjustSize } from '../../utils/sizes';
+import {
+  AccessibilityPropTypes,
+  AccessibilityRoles,
+  getAccessibilityConfig,
+} from '../../utils/accessibility-helper';
+import { referenceReport } from '../../decorators/reportDecorator';
 const paddingHorizontal = 25; // 内容的左右边距
 
 const paddingVertical = 28; // 内容的上下边距
@@ -18,10 +32,7 @@ const marginVertical = 26; // 输入框和上下内容的间距
 
 const blockSize = 48; // 小方块的尺寸
 
-const {
-  height,
-  width
-} = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 /**
  * 勾选框相关数据
  * @typedef {Object} CheckboxData
@@ -86,22 +97,24 @@ class PinCodeDialog extends React.Component {
       checked: PropTypes.bool,
       text: PropTypes.string,
       accessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
-      accessibilityHint: AccessibilityPropTypes.accessibilityHint
+      accessibilityHint: AccessibilityPropTypes.accessibilityHint,
     }),
-    buttons: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string,
-      style: PropTypes.any,
-      callback: PropTypes.func,
-      accessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
-      accessibilityHint: AccessibilityPropTypes.accessibilityHint
-    })),
+    buttons: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string,
+        style: PropTypes.any,
+        callback: PropTypes.func,
+        accessibilityLabel: AccessibilityPropTypes.accessibilityLabel,
+        accessibilityHint: AccessibilityPropTypes.accessibilityHint,
+      }),
+    ),
     onModalShow: PropTypes.func,
     onModalHide: PropTypes.func,
     onDismiss: PropTypes.func,
     modalStyle: PropTypes.object,
     canDismiss: PropTypes.bool,
     accessible: AccessibilityPropTypes.accessible,
-    hasShade: PropTypes.bool
+    hasShade: PropTypes.bool,
   };
   static defaultProps = {
     digit: 6,
@@ -114,24 +127,27 @@ class PinCodeDialog extends React.Component {
       messageNumberOfLines: 15,
       titleStyle: {},
       messageStyle: {},
-      digitStyle: {}
+      digitStyle: {},
     },
     canDismiss: true,
-    hasShade: true
+    hasShade: true,
   };
 
   UNSAFE_componentWillReceiveProps(props) {
     if (props.visible === true) {
       this.setState({
-        numArr: Array.from({
-          length: this.digit
-        }, () => undefined),
-        value: ''
+        numArr: Array.from(
+          {
+            length: this.digit,
+          },
+          () => undefined,
+        ),
+        value: '',
       });
     }
 
     this.setState({
-      checked: (props.checkboxData || {})['checked'] || false
+      checked: (props.checkboxData || {})['checked'] || false,
     });
     this.process(props);
   }
@@ -149,20 +165,26 @@ class PinCodeDialog extends React.Component {
       }
     }
 
-    const numArr = Array.from({
-      length: this.digit
-    }, () => undefined);
+    const numArr = Array.from(
+      {
+        length: this.digit,
+      },
+      () => undefined,
+    );
     this.state = {
       numArr,
       value: '',
       checked: (props.checkboxData || {})['checked'] || false,
-      fadeAnim: new Animated.Value(0)
+      fadeAnim: new Animated.Value(0),
     };
     this.process(props);
-    this.responsiveTextGroup = this.context.media?.screenType === 'tablet' ? {
-      width: adjustSize(blockSize * 3) * 0.75,
-      height: adjustSize(blockSize * 3) * 0.75
-    } : {};
+    this.responsiveTextGroup =
+      this.context.media?.screenType === 'tablet'
+        ? {
+            width: adjustSize(blockSize * 3) * 0.75,
+            height: adjustSize(blockSize * 3) * 0.75,
+          }
+        : {};
   }
 
   process(props) {
@@ -177,7 +199,7 @@ class PinCodeDialog extends React.Component {
         button.callback = () => {
           callbackOrigin({
             checked: this.state.checked,
-            numArr: this.state.numArr
+            numArr: this.state.numArr,
           });
         };
       }
@@ -190,23 +212,22 @@ class PinCodeDialog extends React.Component {
    * @param {string} text
    */
 
-
   _onChangeText(text) {
     if (/^\d*$/.test(text)) {
       if (text.length <= this.digit) {
         const numArr = this.state.numArr.map((v, i) => text[i]);
         this.setState({
-          numArr
+          numArr,
         });
       }
 
       this.setState({
-        value: text.slice(0, this.digit)
+        value: text.slice(0, this.digit),
       });
     } else {
       const value = text.match(/\d*/)[0];
       this.setState({
-        value
+        value,
       });
     }
   }
@@ -214,51 +235,68 @@ class PinCodeDialog extends React.Component {
    * 输入框上方的文字说明
    */
 
-
   renderUpExtra() {
     if (!this.props.message) return null;
     let numberOfLines = 15;
 
-    if (this.props.dialogStyle && this.props.dialogStyle.hasOwnProperty('messageNumberOfLines')) {
+    if (
+      this.props.dialogStyle &&
+      this.props.dialogStyle.hasOwnProperty('messageNumberOfLines')
+    ) {
       numberOfLines = this.props.dialogStyle.messageNumberOfLines;
     }
 
-    return <Text style={[styles.message, {
-      color: this.context.theme?.colorGrayHeavier
-    }, this.props.dialogStyle.messageStyle]} allowFontScaling={this.props.dialogStyle.allowFontScaling} numberOfLines={numberOfLines} {...getAccessibilityConfig({
-      accessible: this.props.accessible,
-      accessibilityRole: AccessibilityRoles.text
-    })}>
+    return (
+      <Text
+        style={[
+          styles.message,
+          {
+            color: this.context.theme?.colorGrayHeavier,
+          },
+          this.props.dialogStyle.messageStyle,
+        ]}
+        allowFontScaling={this.props.dialogStyle.allowFontScaling}
+        numberOfLines={numberOfLines}
+        {...getAccessibilityConfig({
+          accessible: this.props.accessible,
+          accessibilityRole: AccessibilityRoles.text,
+        })}
+      >
         {this.props.message || ''}
-      </Text>;
+      </Text>
+    );
   }
   /**
-    * 待输入光标
-    */
-
+   * 待输入光标
+   */
 
   fadeInView = () => {
-    const animationSequence = Animated.sequence([Animated.timing(this.state.fadeAnim, {
-      toValue: 1,
-      duration: 490,
-      easing: Easing.exp,
-      useNativeDriver: true
-    }), Animated.timing(this.state.fadeAnim, {
-      toValue: 0,
-      duration: 490,
-      easing: Easing.exp,
-      useNativeDriver: true
-    })]);
+    const animationSequence = Animated.sequence([
+      Animated.timing(this.state.fadeAnim, {
+        toValue: 1,
+        duration: 490,
+        easing: Easing.exp,
+        useNativeDriver: true,
+      }),
+      Animated.timing(this.state.fadeAnim, {
+        toValue: 0,
+        duration: 490,
+        easing: Easing.exp,
+        useNativeDriver: true,
+      }),
+    ]);
     Animated.loop(animationSequence).start();
-    return <Animated.View style={{
-      width: 2,
-      height: 18,
-      borderRadius: 0.5,
-      backgroundColor: '#32BAC0',
-      opacity: this.state.fadeAnim
-    }}>
-
-      </Animated.View>;
+    return (
+      <Animated.View
+        style={{
+          width: 2,
+          height: 18,
+          borderRadius: 0.5,
+          backgroundColor: '#32BAC0',
+          opacity: this.state.fadeAnim,
+        }}
+      ></Animated.View>
+    );
   };
   /**
    * 一组Text
@@ -266,96 +304,156 @@ class PinCodeDialog extends React.Component {
 
   renderTextGroup() {
     const focusIndex = this.state.numArr.indexOf(undefined);
-    return Array.from({
-      length: this.digit
-    }, (v, i) => i).map((v, i) => {
-      const marginLeft = i === 0 ? {} : {
-        marginLeft: this.context.media?.screenType === 'tablet' ? adjustSize(66 / this.digit * 3) * 0.75 : adjustSize(66 / this.digit * 3)
-      }; //const borderColor = i === focusIndex ? { borderColor: this.props.color } : {};
+    return Array.from(
+      {
+        length: this.digit,
+      },
+      (v, i) => i,
+    ).map((v, i) => {
+      const marginLeft =
+        i === 0
+          ? {}
+          : {
+              marginLeft:
+                this.context.media?.screenType === 'tablet'
+                  ? adjustSize((66 / this.digit) * 3) * 0.75
+                  : adjustSize((66 / this.digit) * 3),
+            }; //const borderColor = i === focusIndex ? { borderColor: this.props.color } : {};
 
       const borderColor = {};
       let boxView;
 
       if (i < focusIndex - 1 || focusIndex === -1) {
         // 圆点
-        boxView = <View style={{
-          width: adjustSize(24),
-          height: adjustSize(24),
-          backgroundColor: this.context.theme?.colorBlack1,
-          // 新添加颜色
-          borderRadius: adjustSize(12)
-        }} />;
+        boxView = (
+          <View
+            style={{
+              width: adjustSize(24),
+              height: adjustSize(24),
+              backgroundColor: this.context.theme?.colorBlack1,
+              // 新添加颜色
+              borderRadius: adjustSize(12),
+            }}
+          />
+        );
       } else if (i === focusIndex) {
         // 光标
         boxView = this.fadeInView();
       } else {
         // 数字
-        boxView = <Text style={[styles.blockText, {
-          color: this.context.theme?.colorBlack1
-        }, this.props.dialogStyle.digitStyle]} selectionColor={'green'} allowFontScaling={this.props.dialogStyle.allowFontScaling}>
+        boxView = (
+          <Text
+            style={[
+              styles.blockText,
+              {
+                color: this.context.theme?.colorBlack1,
+              },
+              this.props.dialogStyle.digitStyle,
+            ]}
+            selectionColor={'green'}
+            allowFontScaling={this.props.dialogStyle.allowFontScaling}
+          >
             {this.state.numArr[i] || ''}
-          </Text>;
+          </Text>
+        );
       }
 
-      const textGroupIos = Platform.OS === 'ios' ? {
-        width: adjustSize(blockSize * 3) * (width - 20) / width,
-        height: adjustSize(blockSize * 3) * (width - 20) / width
-      } : {};
-      return <View key={i} style={[styles.blockContainer, textGroupIos, this.responsiveTextGroup, {
-        backgroundColor: this.context.theme?.colorBtnGrayNor,
-        borderColor: this.context.theme?.colorBtnGrayNor
-      }, marginLeft, borderColor]} {...getAccessibilityConfig({
-        accessible: this.props.accessible
-      })}>
-            {boxView}
-          </View>;
+      const textGroupIos =
+        Platform.OS === 'ios'
+          ? {
+              width: (adjustSize(blockSize * 3) * (width - 20)) / width,
+              height: (adjustSize(blockSize * 3) * (width - 20)) / width,
+            }
+          : {};
+      return (
+        <View
+          key={i}
+          style={[
+            styles.blockContainer,
+            textGroupIos,
+            this.responsiveTextGroup,
+            {
+              backgroundColor: this.context.theme?.colorBtnGrayNor,
+              borderColor: this.context.theme?.colorBtnGrayNor,
+            },
+            marginLeft,
+            borderColor,
+          ]}
+          {...getAccessibilityConfig({
+            accessible: this.props.accessible,
+          })}
+        >
+          {boxView}
+        </View>
+      );
     });
   }
   /**
    * 输入框下方的勾选框和文字
    */
 
-
   renderDownExtra() {
     if (!(this.props.checkboxData instanceof Object)) return null;
     let numberOfLines = 1;
 
-    if (this.props.checkboxData && this.props.checkboxData.hasOwnProperty('numberOfLines')) {
+    if (
+      this.props.checkboxData &&
+      this.props.checkboxData.hasOwnProperty('numberOfLines')
+    ) {
       numberOfLines = this.props.checkboxData.numberOfLines;
     }
 
     const {
       text,
       accessibilityLabel,
-      accessibilityHint
-    } = this.props.checkboxData;
-    return <TouchableOpacity onPress={() => this.onPressCheckbox()} activeOpacity={1} {...getAccessibilityConfig({
-      accessible: this.props.accessible,
-      accessibilityRole: AccessibilityRoles.checkbox,
-      accessibilityLabel,
       accessibilityHint,
-      accessibilityState: {
-        disabled: false,
-        checked: this.state.checked
-      }
-    })}>
+    } = this.props.checkboxData;
+    return (
+      <TouchableOpacity
+        onPress={() => this.onPressCheckbox()}
+        activeOpacity={1}
+        {...getAccessibilityConfig({
+          accessible: this.props.accessible,
+          accessibilityRole: AccessibilityRoles.checkbox,
+          accessibilityLabel,
+          accessibilityHint,
+          accessibilityState: {
+            disabled: false,
+            checked: this.state.checked,
+          },
+        })}
+      >
         <View style={styles.checkboxContainer}>
-          <Checkbox checked={this.state.checked} checkedColor={this.props.color} style={{
-          width: 22,
-          height: 22,
-          borderRadius: 11
-        }} onValueChange={checked => {
-          this.setState({
-            checked: checked
-          });
-        }} />
-          <Text style={[styles.checkboxText, {
-          color: this.context.theme?.colorGrayHeavier
-        }, this.props.checkboxData.textStyle]} numberOfLines={numberOfLines} allowFontScaling={this.props.dialogStyle.allowFontScaling}>
+          <Checkbox
+            checked={this.state.checked}
+            checkedColor={this.props.color}
+            style={{
+              width: 22,
+              height: 22,
+              borderRadius: 11,
+            }}
+            onValueChange={(checked) => {
+              this.setState({
+                checked: checked,
+              });
+            }}
+          />
+          <Text
+            style={[
+              styles.checkboxText,
+              {
+                color: this.context.theme?.colorGrayHeavier,
+              },
+              this.props.checkboxData.textStyle,
+            ]}
+            numberOfLines={numberOfLines}
+            allowFontScaling={this.props.dialogStyle.allowFontScaling}
+          >
             {text || ''}
           </Text>
         </View>
-      </TouchableOpacity>;
+      </TouchableOpacity>
+    );
   }
 
   render() {
@@ -364,29 +462,56 @@ class PinCodeDialog extends React.Component {
     if (buttons instanceof Array) {
       let button = buttons[buttons.length - 1];
       button.disabled = this.state.value === '';
-      button.colorType = this.state.value === '' ? 'grayLayerBlack' : 'blueLayerWhite';
+      button.colorType =
+        this.state.value === '' ? 'grayLayerBlack' : 'blueLayerWhite';
     }
 
-    const absDialogStyle = Platform.OS === 'ios' ? {
-      bottom: ~~(height * 0.4),
-      borderRadius: 20,
-      marginHorizontal: 10,
-      width: width - 20
-    } : {};
-    return <AbstractDialog hasShade={this.props.hasShade} animationType={this.props.animationType} visible={this.props.visible} title={this.props.title} buttons={this.buttons} dialogStyle={this.props.dialogStyle} onModalShow={this.props.onModalShow} onModalHide={this.props.onModalHide} style={this.props.modalStyle} onDismiss={() => this._onDismiss()} useNewTheme canDismiss={this.props.canDismiss} style={absDialogStyle} {...getAccessibilityConfig({
-      accessible: this.props.accessible
-    })}>
+    const absDialogStyle =
+      Platform.OS === 'ios'
+        ? {
+            bottom: ~~(height * 0.4),
+            borderRadius: 20,
+            marginHorizontal: 10,
+            width: width - 20,
+          }
+        : {};
+    return (
+      <AbstractDialog
+        hasShade={this.props.hasShade}
+        animationType={this.props.animationType}
+        visible={this.props.visible}
+        title={this.props.title}
+        buttons={this.buttons}
+        dialogStyle={this.props.dialogStyle}
+        onModalShow={this.props.onModalShow}
+        onModalHide={this.props.onModalHide}
+        style={this.props.modalStyle}
+        onDismiss={() => this._onDismiss()}
+        useNewTheme
+        canDismiss={this.props.canDismiss}
+        style={absDialogStyle}
+        {...getAccessibilityConfig({
+          accessible: this.props.accessible,
+        })}
+      >
         <View style={[styles.container]}>
           {this.renderUpExtra()}
           <View style={styles.pinCodeContainer}>
-            <View style={styles.textGroup}>
-              {this.renderTextGroup()}
-            </View>
-            <TextInput autoFocus={true} caretHidden={true} style={styles.textinput} value={this.state.value} underlineColorAndroid="transparent" onChangeText={text => this._onChangeText(text)} keyboardType="numeric" />
+            <View style={styles.textGroup}>{this.renderTextGroup()}</View>
+            <TextInput
+              autoFocus={true}
+              caretHidden={true}
+              style={styles.textinput}
+              value={this.state.value}
+              underlineColorAndroid="transparent"
+              onChangeText={(text) => this._onChangeText(text)}
+              keyboardType="numeric"
+            />
           </View>
           {this.renderDownExtra()}
         </View>
-      </AbstractDialog>;
+      </AbstractDialog>
+    );
   }
 
   _onDismiss() {
@@ -395,40 +520,39 @@ class PinCodeDialog extends React.Component {
 
   onPressCheckbox() {
     this.setState({
-      checked: !this.state.checked
+      checked: !this.state.checked,
     });
   }
-
 }
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal,
     paddingBottom: paddingVertical,
-    borderRadius: Styles.dialog.modal.borderRadius
+    borderRadius: Styles.dialog.modal.borderRadius,
   },
   message: {
     fontSize: 16,
     lineHeight: 22,
     flex: 1,
-    marginHorizontal: 15
+    marginHorizontal: 15,
   },
   pinCodeContainer: {
     marginVertical,
     marginBottom: 12,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   textinput: {
     position: 'absolute',
     width: Styles.dialog.modal.width - paddingHorizontal * 2,
     height: 50,
     backgroundColor: 'transparent',
-    color: 'transparent'
+    color: 'transparent',
   },
   textGroup: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   blockContainer: {
     height: adjustSize(blockSize * 3),
@@ -436,22 +560,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 2,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   blockText: {
-    fontSize: adjustSize(60)
+    fontSize: adjustSize(60),
   },
   checkboxContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 15
+    marginHorizontal: 15,
   },
   checkboxText: {
     flex: 1,
     marginLeft: 7,
     fontSize: 14,
     lineHeight: 19,
-    textAlign: 'left'
-  }
+    textAlign: 'left',
+  },
 });
 export default PinCodeDialog;
