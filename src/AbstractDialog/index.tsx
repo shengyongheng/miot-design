@@ -1,29 +1,46 @@
 // @ts-ignore
 import AbstractDialog from 'miot/ui/Dialog/AbstractDialog';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
 const App: React.FC<any> = () => {
-  const [visible0] = useState(true);
-  const [visible1] = useState(true);
+  const [visible0, setVisible0] = useState(false);
+  const [visible1, setVisible1] = useState(false);
 
-  const onDismiss = (data: string) => {
-    console.log(data);
+  const onDismiss = (data: '0' | '1') => {
+    console.log('data:', data);
+    visible0 && setVisible0(false);
+    visible1 && setVisible1(false);
   };
 
   return (
     <>
+      <Button
+        onPress={() => {
+          console.log('基本使用');
+          setVisible0(!visible0);
+        }}
+        title="基本使用"
+        color="#841584"
+      />
       <AbstractDialog
         visible={visible0}
-        title={'testTitle'}
+        title={'基本使用'}
         subtitle={'testTitle'}
         showSubtitle
         onDismiss={() => onDismiss('0')}
       />
-      <Text>// 自定义内容</Text>
+      <Button
+        onPress={() => {
+          console.log('自定义内容');
+          setVisible1(!visible1);
+        }}
+        title="自定义内容"
+        color="#841584"
+      />
       <AbstractDialog
         visible={visible1}
-        title={'testTitle'}
+        title={'自定义内容'}
         subtitle={'testTitle'}
         showSubtitle
         onDismiss={() => onDismiss('1')}
