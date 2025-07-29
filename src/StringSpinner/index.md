@@ -9,11 +9,11 @@ nav:
   path: /components
 ---
 
-# ListItem 普通列表项
+# StringSpinner 通用选择器
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+IOS、Android 原生组件当前无法渲染
 
 ## 用法
 
