@@ -8,6 +8,7 @@ group:
 nav:
   title: '组件'
   path: /components
+  order: 0
 ---
 
 # Card 卡片容器

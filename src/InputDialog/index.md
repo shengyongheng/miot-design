@@ -7,6 +7,7 @@ group:
 nav:
   title: '组件'
   path: /components
+  order: 0
 ---
 
 # InputDialog 加载列表
