@@ -1,7 +1,7 @@
 {
-  "name": "lalala-components-rn",
+  "name": "miot-design",
   "version": "1.1.0",
-  "description": "react native components",
+  "description": "miot-design",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -13,7 +13,6 @@
     "android",
     "ios",
     "cpp",
-    "hj-components-rn.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -35,13 +34,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/winljm001/rn-components",
-  "author": "winljm001 <819648983@qq.com> (https://github.com/winljm001)",
+  "repository": "https://github.com/shengyongheng/miot-design",
+  "author": "hengshengyong <3271660881@qq.com> (https://github.com/shengyongheng)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/winljm001/rn-components/issues"
+    "url": "https://github.com/shengyongheng/miot-design/issues"
   },
-  "homepage": "https://github.com/winljm001/rn-components#readme",
+  "homepage": "https://github.com/shengyongheng/miot-design#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
