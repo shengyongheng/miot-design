@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import Card from 'miot/ui/Card/Card';
 
 const Index = () => {
-  const [visible2, setVisible2] = useState(false);
+  const [, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
   const [visible4, setVisible4] = useState(false);
   const ICON_SIZE = 16;
