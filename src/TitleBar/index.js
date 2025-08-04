@@ -2,7 +2,7 @@
 import TitleBar from 'miot/ui/TitleBar';
 import React from 'react';
 
-const Index: React.FC<any> = () => {
+const Index = () => {
   return (
     <TitleBar
       type="light"

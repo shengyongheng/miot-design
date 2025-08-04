@@ -22,7 +22,7 @@ nav:
 // @ts-ignore
 import LoadingDialog from 'miot/ui/Dialog/LoadingDialog';
 import React, { useState } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Button } from 'react-native';
 
 const App: React.FC<any> = () => {
   const [visible0, setVisible0] = useState(false);

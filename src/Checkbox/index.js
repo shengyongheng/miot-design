@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-// @ts-ignore
 import Checkbox from 'miot/ui/Checkbox';
 
 const Index: React.FC = () => {

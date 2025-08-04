@@ -19,28 +19,45 @@ nav:
 ## 用法
 
 ```jsx
+// @ts-ignore
+import NavigationBar from 'miot/ui/NavigationBar';
 import React from 'react';
-import { Text } from 'react-native';
-import ListItem from 'miot/ui/ListItem/ListItem';
-import Separator from 'miot/ui/Separator';
 
-export default () => (
-  <>
-    <ListItem
-      title="自定义样式"
-      subtitle="这是用来测试副标题的文案，尽量写长一点争取可以换行。"
-      value="这是一段测试右侧文案"
-      hideArrow={false}
-      showDot={false}
-      containerStyle={{ width: '100%', backgroundColor: 'lightblue' }}
-      titleStyle={{ fontSize: 17, color: 'red' }}
-      subtitleStyle={{ fontSize: 10, color: 'green' }}
-      valueStyle={{ fontSize: 10, color: 'yellow' }}
-      onPress={(_) => console.log(4)}
-      separator={<>/</>}
+const Index = () => {
+  return (
+    <NavigationBar
+      backgroundColor="black"
+      type={NavigationBar.TYPE.DARK}
+      left={[
+        {
+          key: NavigationBar.ICON.BACK,
+          // onPress: (_) => this.props.navigation.goBack(),
+        },
+        {
+          key: NavigationBar.ICON.CLOSE,
+          onPress: (_) => console.log('onPress'),
+        },
+      ]}
+      right={[
+        {
+          key: NavigationBar.ICON.COLLECT,
+          disable: true,
+          onPress: (_) => console.log('onPress'),
+        },
+        {
+          key: NavigationBar.ICON.MORE,
+          showDot: true,
+          onPress: (_) => console.log('onPress'),
+        },
+      ]}
+      title="标题"
+      subtitle="副标题"
+      onPressTitle={(_) => console.log('onPressTitle')}
     />
-  </>
-);
+  );
+};
+
+export default Index;
 ```
 
 ## API

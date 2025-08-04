@@ -71,6 +71,7 @@
     "core-js": "^3.8.2",
     "dotenv-cli": "^4.0.0",
     "dumi-theme-mobile": "^1.0.0",
+    "mhui-rn-fixed": "1.1.0",
     "mhui-rn": "file:./mhui-rn",
     "miot": "file:./miot-sdk",
     "react-native-indicators": "^0.13.0",

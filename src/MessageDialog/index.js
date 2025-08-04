@@ -3,13 +3,13 @@ import MessageDialog from 'miot/ui/Dialog/MessageDialog';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible4, setVisible4] = useState(false);
   const [visible5, setVisible5] = useState(false);
   const [visible6, setVisible6] = useState(false);
   const [visible7, setVisible7] = useState(false);
 
-  const onDismiss = (data: '4' | '5' | '6' | '7') => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible4 && setVisible4(false);
     visible5 && setVisible5(false);
@@ -32,10 +32,10 @@ const App: React.FC<any> = () => {
           {
             text: '我了解了',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible4(false),
+            callback: (_) => setVisible4(false),
           },
         ]}
-        onDismiss={(_: any) => onDismiss('4')}
+        onDismiss={(_) => onDismiss('4')}
       />
       <Button
         onPress={() => {
@@ -52,15 +52,15 @@ const App: React.FC<any> = () => {
           {
             text: '消失',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible5(false),
+            callback: (_) => setVisible5(false),
           },
           {
             text: '不消失',
             style: { color: 'lightblue' },
-            callback: (_: any) => console.log('不消失'),
+            callback: (_) => console.log('不消失'),
           },
         ]}
-        onDismiss={(_: any) => onDismiss('5')}
+        onDismiss={(_) => onDismiss('5')}
       />
       <Button
         onPress={() => {
@@ -77,24 +77,24 @@ const App: React.FC<any> = () => {
         message={'下划线消息弹窗'}
         extraText="你点我一下试试"
         extra={{
-          onPress: (_: any) => console.log('点击了下划线'),
+          onPress: (_) => console.log('点击了下划线'),
         }}
         buttons={[
           {
             text: '取消',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible6(false),
+            callback: (_) => setVisible6(false),
           },
           {
             text: '确认',
             style: { color: 'lightblue' },
-            callback: (obj: any) => {
+            callback: (obj) => {
               console.log(`是否点击了下划线: ${obj.hasPressUnderlineText}`);
               setVisible6(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('6')}
+        onDismiss={(_) => onDismiss('6')}
       />
       <Button
         onPress={() => {
@@ -111,24 +111,24 @@ const App: React.FC<any> = () => {
         message={'勾选框消息弹窗'}
         extraText="快点我试试"
         extra={{
-          onPress: (_: any) => console.log("点击了'快点我试试'"),
+          onPress: (_) => console.log("点击了'快点我试试'"),
         }}
         buttons={[
           {
             text: '取消',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible7(false),
+            callback: (_) => setVisible7(false),
           },
           {
             text: '确认',
             style: { color: 'lightblue' },
-            callback: (obj: any) => {
+            callback: (obj) => {
               console.log(`是否勾选: ${obj.checked}`);
               setVisible7(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('7')}
+        onDismiss={(_) => onDismiss('7')}
       />
     </>
   );

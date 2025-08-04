@@ -1,4 +1,3 @@
-// @ts-ignore
 import Separator from 'miot/ui/Separator';
 import React from 'react';
 

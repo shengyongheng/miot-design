@@ -2,7 +2,7 @@
 import ListItemWithSlider from 'miot/ui/ListItem/ListItemWithSlider';
 import React from 'react';
 
-const Index: React.FC<any> = () => {
+const App = () => {
   return (
     <ListItemWithSlider
       title="自定义样式的滑动条列表项自定义样式的滑动条列表项"
@@ -19,11 +19,11 @@ const Index: React.FC<any> = () => {
       valueStyle={{ fontSize: 10, color: 'yellow' }}
       showWithPercent={false}
       unit={'cal'}
-      onValueChange={(value: any) => console.log(value)}
-      onSlidingComplete={(value: any) => console.log(value)}
+      onValueChange={(value) => console.log(value)}
+      onSlidingComplete={(value) => console.log(value)}
       separator={<>/</>}
     />
   );
 };
 
-export default Index;
+export default App;

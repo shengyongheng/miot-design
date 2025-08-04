@@ -2,8 +2,8 @@
 import NormalGear from 'miot/ui/Gear/NormalGear';
 import React, { useState } from 'react';
 
-const App: React.FC<any> = () => {
-  const [selectIndex] = useState<number>(1);
+const App = () => {
+  const [selectIndex] = useState(1);
 
   return (
     <>
@@ -15,7 +15,7 @@ const App: React.FC<any> = () => {
         textStyle={{ fontSize: 16, fontFamily: 'DS-Digital' }}
         maxWidth={300}
         selectIndex={selectIndex}
-        onSelect={(index: number) => console.log(`select${index}`)}
+        onSelect={(index) => console.log(`select${index}`)}
         containerStyle={{ backgroundColor: '#fff' }}
       />
     </>

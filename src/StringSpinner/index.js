@@ -2,7 +2,7 @@
 import StringSpinner from 'miot/ui/StringSpinner';
 import React from 'react';
 
-const App: React.FC<any> = () => {
+const App = () => {
   return (
     <>
       <StringSpinner
@@ -22,7 +22,7 @@ const App: React.FC<any> = () => {
           rowHeight: 70,
           selectBgColor: '#f5f5f5',
         }}
-        onValueChanged={(data: any) => {
+        onValueChanged={(data) => {
           // this.updateOneValue(data);
           console.log(data);
         }}

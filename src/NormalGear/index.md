@@ -19,11 +19,12 @@ nav:
 ## 用法
 
 ```tsx
+// @ts-ignore
 import NormalGear from 'miot/ui/Gear/NormalGear';
 import React, { useState } from 'react';
 
-const App: React.FC<any> = () => {
-  const [selectIndex] = useState<number>(1);
+const App = () => {
+  const [selectIndex] = useState(1);
 
   return (
     <>

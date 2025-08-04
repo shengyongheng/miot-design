@@ -3,13 +3,13 @@ import InputDialog from 'miot/ui/Dialog/InputDialog';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible8, setVisible8] = useState(false);
   const [visible9, setVisible9] = useState(false);
   const [visible10, setVisible10] = useState(false);
   const [visible11, setVisible11] = useState(false);
 
-  const onDismiss = (data: string) => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible8 && setVisible8(false);
     visible9 && setVisible9(false);
@@ -29,7 +29,7 @@ const App: React.FC<any> = () => {
       <InputDialog
         visible={visible8}
         title="最简单输入弹窗"
-        onDismiss={(_: any) => onDismiss('8')}
+        onDismiss={(_) => onDismiss('8')}
       />
       <Button
         onPress={() => {
@@ -45,24 +45,24 @@ const App: React.FC<any> = () => {
         underlineData={{
           leftText: '请输入你的ID',
           underlineText: '还没有ID？注册一个',
-          onPress: (_: any) => console.log('你注册的ID是123456'),
+          onPress: (_) => console.log('你注册的ID是123456'),
         }}
         buttons={[
           {
             text: '取消',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible9(false),
+            callback: (_) => setVisible9(false),
           },
           {
             text: '保存',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`结果`, result);
               setVisible9(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('9')}
+        onDismiss={(_) => onDismiss('9')}
       />
       <Button
         onPress={() => {
@@ -83,18 +83,18 @@ const App: React.FC<any> = () => {
           {
             text: '取消',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible10(false),
+            callback: (_) => setVisible10(false),
           },
           {
             text: '保存',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`结果`, result);
               setVisible10(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('10')}
+        onDismiss={(_) => onDismiss('10')}
       />
       <Button
         onPress={() => {
@@ -111,24 +111,24 @@ const App: React.FC<any> = () => {
         underlineData={{
           leftText: '请输入你的ID',
           underlineText: '还没有ID？注册一个',
-          onPress: (_: any) => console.log('你注册的ID是123456'),
+          onPress: (_) => console.log('你注册的ID是123456'),
         }}
         buttons={[
           {
             text: '取消',
             style: { color: 'lightpink' },
-            callback: (_: any) => setVisible11(false),
+            callback: (_) => setVisible11(false),
           },
           {
             text: '保存',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`结果`, result);
               setVisible11(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('11')}
+        onDismiss={(_) => onDismiss('11')}
       />
     </>
   );

@@ -2,7 +2,7 @@
 import Switch from 'miot/ui/Switch';
 import React, { useState } from 'react';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [value, setValue] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ const App: React.FC<any> = () => {
       onTintColor="red"
       tintColor="blue"
       value={value}
-      onValueChange={(value: boolean) => setValue(value)}
+      onValueChange={(value) => setValue(value)}
     />
   );
 };

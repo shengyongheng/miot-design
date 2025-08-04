@@ -19,12 +19,12 @@ nav:
 ## 用法
 
 ```tsx
-import React from 'react';
-import { Text } from 'react-native';
+// @ts-ignore
 import ListItemWithSlider from 'miot/ui/ListItem/ListItemWithSlider';
+import React from 'react';
 
-export default () => (
-  <>
+const App = () => {
+  return (
     <ListItemWithSlider
       title="自定义样式的滑动条列表项自定义样式的滑动条列表项"
       sliderProps={{ minimumValue: 25, maximumValue: 75, value: 60 }}
@@ -40,12 +40,14 @@ export default () => (
       valueStyle={{ fontSize: 10, color: 'yellow' }}
       showWithPercent={false}
       unit={'cal'}
-      onValueChange={(value: any) => console.log(value)}
-      onSlidingComplete={(value: any) => console.log(value)}
+      onValueChange={(value) => console.log(value)}
+      onSlidingComplete={(value) => console.log(value)}
       separator={<>/</>}
     />
-  </>
-);
+  );
+};
+
+export default App;
 ```
 
 ## API

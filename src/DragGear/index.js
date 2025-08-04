@@ -1,10 +1,9 @@
-// @ts-ignore
 import DragGear from 'miot/ui/Gear/DragGear';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 
-const App: React.FC<any> = () => {
-  const [selectIndex, setSelectIndex] = useState<number>(1);
+const App = () => {
+  const [selectIndex, setSelectIndex] = useState(1);
 
   return (
     <>
@@ -17,7 +16,7 @@ const App: React.FC<any> = () => {
         textStyle={{ fontSize: 16, fontFamily: 'DS-Digital' }}
         maxWidth={300}
         selectIndex={selectIndex}
-        onSelect={(index: number) => {
+        onSelect={(index) => {
           setSelectIndex(index);
           console.log(`select${index}`);
         }}

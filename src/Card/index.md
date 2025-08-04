@@ -21,14 +21,13 @@ Card 组件是一个基础的交互元素，用于触发操作。
 
 <!-- <code src="./index.tsx"></code> -->
 
-```tsx
+```jsx
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-// @ts-ignore
 import Card from 'miot/ui/Card/Card';
 
 const Index = () => {
-  const [visible2, setVisible2] = useState(true);
+  const [, setVisible2] = useState(true);
   const [visible3, setVisible3] = useState(true);
   const [visible4, setVisible4] = useState(true);
   const ICON_SIZE = 16;
@@ -60,9 +59,9 @@ const Index = () => {
         icon={require('./images/logo.jpg')}
         text="自定义卡片"
         visible={visible3}
-        dismiss={(_: any) => setVisible3(false)}
+        dismiss={(_) => setVisible3(false)}
         showDismiss
-        onPress={(_: any) => setVisible2(false)}
+        onPress={(_) => setVisible2(false)}
         cardStyle={{
           width: 350 / 2,
           height: 75,
@@ -76,10 +75,10 @@ const Index = () => {
       <Card
         innerView={getInnerView()}
         visible={visible4}
-        dismiss={(_: any) => setVisible4(false)}
+        dismiss={(_) => setVisible4(false)}
         showShadow={false}
         showDismiss
-        onPress={(_: any) => setVisible3(false)}
+        onPress={(_) => setVisible3(false)}
         cardStyle={{ width: 222, height: 80 }}
       />
     </>

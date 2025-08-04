@@ -19,18 +19,18 @@ nav:
 ## 用法
 
 ```jsx
-import React from 'react';
-import { Text } from 'react-native';
+// @ts-ignore
 import TitleBar from 'miot/ui/TitleBar';
+import React from 'react';
 
-export default () => (
-  <>
+const Index = () => {
+  return (
     <TitleBar
       type="light"
       title="title"
       subTitle="subtitle"
       style={{
-        height: 45,
+        height: 65,
         backgroundColor: '#222',
       }}
       onPressLeft={() => {
@@ -43,8 +43,10 @@ export default () => (
       onPressRight2={() => console.log('onPressRight2')}
       showDot={true}
     />
-  </>
-);
+  );
+};
+
+export default Index;
 ```
 
 ## API
