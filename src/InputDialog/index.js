@@ -1,5 +1,6 @@
 // @ts-ignore
-import InputDialog from 'miot/ui/Dialog/InputDialog';
+import { InputDialog } from 'mhui-rn-fixed';
+// import InputDialog from 'miot/ui/Dialog/InputDialog';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
