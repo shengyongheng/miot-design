@@ -23,12 +23,7 @@ nav:
 import NumberSpinner from 'miot/ui/NumberSpinner';
 import React from 'react';
 
-interface Data {
-  oldValue: number;
-  newValue: number;
-}
-
-const App: React.FC<any> = () => {
+const App = () => {
   return (
     <>
       <NumberSpinner
@@ -39,7 +34,7 @@ const App: React.FC<any> = () => {
         defaultValue={80}
         valueFormat={'%.1f'}
         unit={'km'}
-        onNumberChanged={(data: Data) => {
+        onNumberChanged={(data) => {
           console.log(`newValue:${data.newValue},oldValue:${data.oldValue}`);
         }}
       />

@@ -1,5 +1,5 @@
-// @ts-ignore
-import Radio from 'miot/ui/Radio';
+// import Radio from 'miot/ui/Radio';
+import { Radio } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 
 const App = () => {

@@ -24,10 +24,10 @@ import ProgressDialog from 'miot/ui/Dialog/ProgressDialog';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
-  const [visible, setVisible] = useState(false);
+const App = () => {
+  const [visible, setVisible] = useState(true);
   const [progress, setProgress] = useState(0);
-  const timer = useRef<NodeJS.Timeout>();
+  const timer = useRef();
 
   timer.current = setInterval(() => {
     visible && progress < 1 && setProgress(progress + 0.1);
@@ -36,13 +36,13 @@ const App: React.FC<any> = () => {
   useEffect(() => {
     console.log('progress:', progress);
     if (progress >= 1) {
-      clearInterval(timer.current!);
+      clearInterval(timer?.current);
       setProgress(0);
       visible && setVisible(false);
     }
   }, [progress, visible]);
 
-  const onDismiss = (data: '3') => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     // visible && setVisible(false);
   };
@@ -63,7 +63,7 @@ const App: React.FC<any> = () => {
         unfilledColor="#fff"
         textColor="blue"
         progress={progress}
-        onDismiss={(_: any) => onDismiss('3')}
+        onDismiss={(_) => onDismiss('3')}
       />
     </>
   );

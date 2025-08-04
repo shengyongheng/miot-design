@@ -2,7 +2,7 @@
 import NavigationBar from 'miot/ui/NavigationBar';
 import React from 'react';
 
-const Index: React.FC<any> = () => {
+const Index = () => {
   return (
     <NavigationBar
       backgroundColor="black"
@@ -14,24 +14,24 @@ const Index: React.FC<any> = () => {
         },
         {
           key: NavigationBar.ICON.CLOSE,
-          onPress: (_: any) => console.log('onPress'),
+          onPress: (_) => console.log('onPress'),
         },
       ]}
       right={[
         {
           key: NavigationBar.ICON.COLLECT,
           disable: true,
-          onPress: (_: any) => console.log('onPress'),
+          onPress: (_) => console.log('onPress'),
         },
         {
           key: NavigationBar.ICON.MORE,
           showDot: true,
-          onPress: (_: any) => console.log('onPress'),
+          onPress: (_) => console.log('onPress'),
         },
       ]}
       title="标题"
       subtitle="副标题"
-      onPressTitle={(_: any) => console.log('onPressTitle')}
+      onPressTitle={(_) => console.log('onPressTitle')}
     />
   );
 };

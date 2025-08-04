@@ -1,9 +1,8 @@
-// @ts-ignore
 import GearCard from 'miot/ui/Card/GearCard';
 import React, { useState } from 'react';
 
-const Index: React.FC<any> = () => {
-  const [disabled, setDisabled] = useState<boolean>(false);
+const Index = () => {
+  const [disabled, setDisabled] = useState(false);
 
   return (
     <>
@@ -11,11 +10,11 @@ const Index: React.FC<any> = () => {
         title="最简单最弹窗asd"
         subtitle="as输输入输输入dqwe"
         cardType={GearCard.CARD_TYPE.SLIDER}
-        onSliderValueChange={(value: any) => console.log(value)}
+        onSliderValueChange={(value) => console.log(value)}
         showSwitch={true}
         sliderProps={{ value: 10, showDots: 0.25 }}
         sliderStyle={{ minimumTrackTintColor: 'red', thumbTintColor: 'white' }}
-        options={Array.from({ length: 40 }, (_: any, i) => i * 5)}
+        options={Array.from({ length: 40 }, (_, i) => i * 5)}
       />
       <GearCard
         title="最简单最弹窗asd"
@@ -25,7 +24,7 @@ const Index: React.FC<any> = () => {
         unlimitedHeightEnable
         switchValue={!disabled}
         disabledGear={disabled}
-        onSwitchValueChange={(value: any) => {
+        onSwitchValueChange={(value) => {
           setDisabled(!value);
         }}
         cardType={GearCard.CARD_TYPE.TAB}
@@ -47,7 +46,7 @@ const Index: React.FC<any> = () => {
         titleNumberOfLines={2}
         subtitleNumberOfLines={2}
         options={Array.from({ length: 9 }, (_, i) => i + 1)}
-        onPress={(index: number) => {
+        onPress={(index) => {
           console.log('点击', index);
         }}
       />

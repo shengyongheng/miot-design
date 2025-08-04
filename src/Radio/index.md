@@ -19,8 +19,8 @@ Radio 组件是一个基础的交互元素，用于触发操作。
 ## 用法
 
 ```jsx
-// @ts-ignore
-import Radio from 'miot/ui/Radio';
+// import Radio from 'miot/ui/Radio';
+import { Radio } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { WebView } from 'react-native-webview';
 

@@ -3,13 +3,13 @@ import ChoiceDialog from 'miot/ui/Dialog/ChoiceDialog';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible16, setVisible16] = useState(false);
   const [visible17, setVisible17] = useState(false);
   const [selectedIndexArray, setSelectedIndexArray] = useState([]);
   const [selectedIndexArray1, setSelectedIndexArray1] = useState([]);
 
-  const onDismiss = (data: string) => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible16 && setVisible16(false);
     visible17 && setVisible17(false);
@@ -41,8 +41,8 @@ const App: React.FC<any> = () => {
           },
         ]}
         selectedIndexArray={selectedIndexArray}
-        onDismiss={(_: any) => onDismiss('16')}
-        onSelect={(result: any) => setSelectedIndexArray(result)}
+        onDismiss={(_) => onDismiss('16')}
+        onSelect={(result) => setSelectedIndexArray(result)}
       />
       <Button
         onPress={() => {
@@ -75,14 +75,14 @@ const App: React.FC<any> = () => {
           {
             text: '保存',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`选中的选项`, result);
               setVisible17(false);
               setSelectedIndexArray1(result);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('17')}
+        onDismiss={(_) => onDismiss('17')}
       />
     </>
   );

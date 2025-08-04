@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-// @ts-ignore
 import Card from 'miot/ui/Card/Card';
 
 const Index = () => {
@@ -36,9 +35,9 @@ const Index = () => {
         icon={require('../../public/assets/Mijia_icon.png')}
         text="自定义卡片"
         visible={visible3}
-        dismiss={(_: any) => setVisible3(false)}
+        dismiss={(_) => setVisible3(false)}
         showDismiss
-        onPress={(_: any) => setVisible2(false)}
+        onPress={(_) => setVisible2(false)}
         cardStyle={{
           width: 750 / 2,
           height: 75,
@@ -52,10 +51,10 @@ const Index = () => {
       <Card
         innerView={getInnerView()}
         visible={visible4}
-        dismiss={(_: any) => setVisible4(false)}
+        dismiss={(_) => setVisible4(false)}
         showShadow={false}
         showDismiss
-        onPress={(_: any) => setVisible3(false)}
+        onPress={(_) => setVisible3(false)}
         cardStyle={{ width: 222, height: 80 }}
       />
     </>

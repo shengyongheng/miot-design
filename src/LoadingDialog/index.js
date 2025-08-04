@@ -6,7 +6,7 @@ import { Button } from 'react-native';
 const App: React.FC<any> = () => {
   const [visible0, setVisible0] = useState(false);
 
-  const onDismiss = (data: '2') => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible0 && setVisible0(false);
   };
@@ -24,7 +24,7 @@ const App: React.FC<any> = () => {
         visible={visible0}
         message="加载中，请稍后...(字体大小随系统字体大小变化而变化)"
         timeout={3000}
-        onDismiss={(_: any) => onDismiss('2')}
+        onDismiss={(_) => onDismiss('2')}
       />
     </>
   );

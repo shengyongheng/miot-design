@@ -3,13 +3,13 @@ import PinCodeDialog from 'miot/ui/Dialog/PinCodeDialog';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible12, setVisible12] = useState(false);
   const [checkboxData] = useState({
     text: '记住密码',
   });
 
-  const onDismiss = (data: string) => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible12 && setVisible12(false);
   };
@@ -34,7 +34,7 @@ const App: React.FC<any> = () => {
           {
             text: '取消',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`结果`, result);
               setVisible12(false);
             },
@@ -42,13 +42,13 @@ const App: React.FC<any> = () => {
           {
             text: '确定',
             style: { color: 'lightblue' },
-            callback: (result: any) => {
+            callback: (result) => {
               console.log(`结果`, result);
               setVisible12(false);
             },
           },
         ]}
-        onDismiss={(_: any) => onDismiss('12')}
+        onDismiss={(_) => onDismiss('12')}
       />
     </>
   );

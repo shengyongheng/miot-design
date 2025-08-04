@@ -15,6 +15,7 @@ const App: React.FC<any> = () => {
 
   return (
     <>
+      {/* @ts-ignore */}
       <Button
         onPress={() => {
           console.log('基本使用');
@@ -30,6 +31,7 @@ const App: React.FC<any> = () => {
         showSubtitle
         onDismiss={() => onDismiss('0')}
       />
+      {/* @ts-ignore */}
       <Button
         onPress={() => {
           console.log('自定义内容');
@@ -57,6 +59,7 @@ const App: React.FC<any> = () => {
           },
         ]}
       >
+        {/* @ts-ignore */}
         <View
           style={{
             flex: 1,
@@ -66,6 +69,7 @@ const App: React.FC<any> = () => {
             justifyContent: 'center',
           }}
         >
+          {/* @ts-ignore */}
           <Text>你看她笑得多开心啊</Text>
         </View>
       </AbstractDialog>
