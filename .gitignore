@@ -67,3 +67,6 @@ lib/
 
 # github token
 .env
+
+# video
+米家自动化配置助手.mp4
