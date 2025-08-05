@@ -21,7 +21,7 @@ Button 组件是一个基础的交互元素，用于触发操作。
 
 ```tsx
 // @ts-ignore
-import Switch from 'miot/ui/Switch';
+import { Switch } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 
 const App = () => {

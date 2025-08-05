@@ -1,5 +1,5 @@
 // @ts-ignore
-import SlideGear from 'miot/ui/Gear/SlideGear';
+import { SlideGear } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 

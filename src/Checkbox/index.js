@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import Checkbox from 'miot/ui/Checkbox';
+import { Checkbox } from 'mhui-rn-fixed';
 
-const Index: React.FC = () => {
+const Index = () => {
   const [checked, setChecked] = useState(false);
   const [disabled] = useState(false);
   return (
@@ -11,14 +11,14 @@ const Index: React.FC = () => {
       <Checkbox
         checked={checked}
         checkedColor="lightgreen"
-        onValueChange={(checked: boolean) => setChecked(checked)}
+        onValueChange={(checked) => setChecked(checked)}
       />
       <Text>圆形</Text>
       <Checkbox
         style={{ borderRadius: 30 }}
         checked={checked}
         checkedColor="lightgreen"
-        onValueChange={(checked: boolean) => setChecked(checked)}
+        onValueChange={(checked) => setChecked(checked)}
       />
       <Text>禁用</Text>
       <Checkbox
@@ -26,7 +26,7 @@ const Index: React.FC = () => {
         disabled={disabled}
         checked={checked}
         checkedColor="lightgreen"
-        onValueChange={(checked: boolean) => setChecked(checked)}
+        onValueChange={(checked) => setChecked(checked)}
       />
     </>
   );

@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import ListItemWithSlider from 'miot/ui/ListItem/ListItemWithSlider';
+import { ListItemWithSlider } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

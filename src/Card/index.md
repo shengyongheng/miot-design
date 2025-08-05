@@ -24,7 +24,7 @@ Card 组件是一个基础的交互元素，用于触发操作。
 ```jsx
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import Card from 'miot/ui/Card/Card';
+import { Card } from 'mhui-rn-fixed';
 
 const Index = () => {
   const [, setVisible2] = useState(true);

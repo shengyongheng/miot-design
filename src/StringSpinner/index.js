@@ -1,5 +1,5 @@
 // @ts-ignore
-import StringSpinner from 'miot/ui/StringSpinner';
+import { StringSpinner } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

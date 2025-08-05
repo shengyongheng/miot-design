@@ -1,5 +1,5 @@
 // @ts-ignore
-import MessageDialog from 'miot/ui/Dialog/MessageDialog';
+import { MessageDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 

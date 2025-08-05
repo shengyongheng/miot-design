@@ -20,7 +20,7 @@ BlankPage 组件是一个基础的交互元素，用于触发操作。
 
 ```jsx
 // @ts-ignore
-import BlankPage from 'miot/ui/BlankPage';
+import { BlankPage } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

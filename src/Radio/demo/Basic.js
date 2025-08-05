@@ -1,5 +1,6 @@
-import { Radio } from 'mhui-rn-fixed';
-// import { Radio } from 'miot-design';
+// import Radio from 'miot/ui/Radio';
+// import { Radio } from 'mhui-rn-fixed';
+import { Radio } from 'miot-design';
 import React, { useState } from 'react';
 
 const App = () => {

@@ -1,9 +1,9 @@
 // @ts-ignore
-import LoadingDialog from 'miot/ui/Dialog/LoadingDialog';
+import { LoadingDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible0, setVisible0] = useState(false);
 
   const onDismiss = (data) => {

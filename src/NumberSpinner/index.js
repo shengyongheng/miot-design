@@ -1,5 +1,5 @@
 // @ts-ignore
-import NumberSpinner from 'miot/ui/NumberSpinner';
+import { NumberSpinner } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

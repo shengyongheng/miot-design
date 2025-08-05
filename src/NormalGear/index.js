@@ -1,5 +1,5 @@
 // @ts-ignore
-import NormalGear from 'miot/ui/Gear/NormalGear';
+import { NormalGear } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 
 const App = () => {

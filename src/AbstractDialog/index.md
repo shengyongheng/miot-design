@@ -20,11 +20,11 @@ nav:
 
 ```tsx
 // @ts-ignore
-import AbstractDialog from 'miot/ui/Dialog/AbstractDialog';
+import { AbstractDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible0, setVisible0] = useState(false);
   const [visible1, setVisible1] = useState(false);
 
@@ -42,6 +42,7 @@ const App: React.FC<any> = () => {
           setVisible0(!visible0);
         }}
         title="基本使用"
+        color="#841584"
       />
       <AbstractDialog
         visible={visible0}
@@ -56,7 +57,7 @@ const App: React.FC<any> = () => {
           setVisible1(!visible1);
         }}
         title="自定义内容"
-        color="#f194ff"
+        color="#841584"
       />
       <AbstractDialog
         visible={visible1}
@@ -94,6 +95,7 @@ const App: React.FC<any> = () => {
 };
 
 export default App;
+
 ```
 
 ## API

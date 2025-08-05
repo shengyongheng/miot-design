@@ -1,5 +1,5 @@
 // @ts-ignore
-import BlankPage from 'miot/ui/BlankPage';
+import { BlankPage } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

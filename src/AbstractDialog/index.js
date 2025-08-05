@@ -1,13 +1,13 @@
 // @ts-ignore
-import AbstractDialog from 'miot/ui/Dialog/AbstractDialog';
+import { AbstractDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 
-const App: React.FC<any> = () => {
+const App = () => {
   const [visible0, setVisible0] = useState(false);
   const [visible1, setVisible1] = useState(false);
 
-  const onDismiss = (data: '0' | '1') => {
+  const onDismiss = (data) => {
     console.log('data:', data);
     visible0 && setVisible0(false);
     visible1 && setVisible1(false);
@@ -15,7 +15,6 @@ const App: React.FC<any> = () => {
 
   return (
     <>
-      {/* @ts-ignore */}
       <Button
         onPress={() => {
           console.log('基本使用');
@@ -31,7 +30,6 @@ const App: React.FC<any> = () => {
         showSubtitle
         onDismiss={() => onDismiss('0')}
       />
-      {/* @ts-ignore */}
       <Button
         onPress={() => {
           console.log('自定义内容');
@@ -59,7 +57,6 @@ const App: React.FC<any> = () => {
           },
         ]}
       >
-        {/* @ts-ignore */}
         <View
           style={{
             flex: 1,
@@ -69,7 +66,6 @@ const App: React.FC<any> = () => {
             justifyContent: 'center',
           }}
         >
-          {/* @ts-ignore */}
           <Text>你看她笑得多开心啊</Text>
         </View>
       </AbstractDialog>

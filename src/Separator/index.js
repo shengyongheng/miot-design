@@ -1,4 +1,4 @@
-import Separator from 'miot/ui/Separator';
+import { Separator } from 'mhui-rn-fixed';
 import React from 'react';
 
 const App = () => {

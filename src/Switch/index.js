@@ -1,5 +1,5 @@
 // @ts-ignore
-import Switch from 'miot/ui/Switch';
+import { Switch } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 
 const App = () => {

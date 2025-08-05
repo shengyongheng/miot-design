@@ -20,7 +20,7 @@ nav:
 
 ```jsx
 // @ts-ignore
-import NavigationBar from 'miot/ui/NavigationBar';
+import { NavigationBar } from 'mhui-rn-fixed';
 import React from 'react';
 
 const Index = () => {

@@ -1,9 +1,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'Miot-Design',
-  favicon: '/assets/Mijia_icon.png',
-  logo: '/assets/Mijia_icon.png',
+  title: 'miot-design',
+  favicon: '/assets/images/Mijia_icon.png',
+  logo: '/assets/images/Mijia_icon.png',
   outputPath: 'docs-dist',
   mode: 'site',
   // 单语言配置方式如下

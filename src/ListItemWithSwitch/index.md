@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import ListItemWithSwitch from 'miot/ui/ListItem/ListItemWithSwitch';
+import { ListItemWithSwitch } from 'mhui-rn-fixed';
 import React from 'react';
 
 const Index = () => {

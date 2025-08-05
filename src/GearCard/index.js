@@ -1,4 +1,4 @@
-import GearCard from 'miot/ui/Card/GearCard';
+import { GearCard } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 
 const Index = () => {

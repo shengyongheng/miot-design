@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import Card from 'miot/ui/Card/Card';
+import { Card } from 'mhui-rn-fixed';
 
 const Index = () => {
   const [, setVisible2] = useState(false);
@@ -13,7 +13,7 @@ const Index = () => {
       <View style={styles.innerContainer}>
         <Image
           style={styles.innerIcon}
-          source={require('../../public/assets/Mijia_icon.png')}
+          source={require('../../public/assets/images/Mijia_icon.png')}
           resizeMode="contain"
         />
         <View style={{ flex: 1 }}>
@@ -32,7 +32,7 @@ const Index = () => {
     <>
       <Text>自定义样式的卡片</Text>
       <Card
-        icon={require('../../public/assets/Mijia_icon.png')}
+        icon={require('../../public/assets/images/Mijia_icon.png')}
         text="自定义卡片"
         visible={visible3}
         dismiss={(_) => setVisible3(false)}

@@ -1,5 +1,5 @@
 // @ts-ignore
-import PinCodeDialog from 'miot/ui/Dialog/PinCodeDialog';
+import { PinCodeDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
