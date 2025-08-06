@@ -17,7 +17,7 @@ nav:
 
 ## 用法
 
-```js
+```jsx
 import { ChoiceDialog } from 'mhui-rn-fixed';
 import React, { useState } from 'react';
 import { Button } from 'react-native';

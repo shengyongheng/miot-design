@@ -21,7 +21,7 @@ Checkbox 组件是一个基础的交互元素，用于触发操作。
 
 <!-- <code src="./index.tsx"></code> -->
 
-```js
+```jsx
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { Checkbox } from 'mhui-rn-fixed';
@@ -54,7 +54,7 @@ const Index = () => {
         disabled={disabled}
         checked={checked}
         checkedColor="lightgreen"
-        onValueChange={(checked: boolean) => setChecked(checked)}
+        onValueChange={(checked) => setChecked(checked)}
       />
     </>
   );
