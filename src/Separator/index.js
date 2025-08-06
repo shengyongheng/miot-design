@@ -1,14 +1,3 @@
-import Separator from 'miot/ui/Separator';
-import React from 'react';
+import { Separator } from 'mhui-rn-fixed';
 
-const App = () => {
-  return (
-    <>
-      <Separator />
-      <Separator style={{ margin: '24 0', height: 20 }} />
-      <Separator type="column" />
-    </>
-  );
-};
-
-export default App;
+export default Separator;

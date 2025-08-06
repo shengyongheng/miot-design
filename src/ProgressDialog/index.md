@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import ProgressDialog from 'miot/ui/Dialog/ProgressDialog';
+import { ProgressDialog } from 'miot-design';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-native';
 

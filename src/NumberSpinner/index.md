@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import NumberSpinner from 'miot/ui/NumberSpinner';
+import { NumberSpinner } from 'miot-design';
 import React from 'react';
 
 const App = () => {

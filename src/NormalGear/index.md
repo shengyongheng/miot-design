@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import NormalGear from 'miot/ui/Gear/NormalGear';
+import { NormalGear } from 'miot-design';
 import React, { useState } from 'react';
 
 const App = () => {

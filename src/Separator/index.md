@@ -19,7 +19,7 @@ Separator 组件是一个基础的交互元素，用于触发操作。
 ## 用法
 
 ```jsx
-import Separator from 'miot/ui/Separator';
+import { Separator } from 'miot-design';
 import React, { useState } from 'react';
 
 const App = () => {

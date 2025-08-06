@@ -2,8 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "hj-components-rn": ["./src/index"],
-      "mhui-rn": ["node_modules/mhui-rn/*"]
+      "miot-design": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

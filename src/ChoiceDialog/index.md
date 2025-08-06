@@ -17,8 +17,8 @@ nav:
 
 ## 用法
 
-```js
-import ChoiceDialog from 'miot/ui/Dialog/ChoiceDialog';
+```jsx
+import { ChoiceDialog } from 'miot-design';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 

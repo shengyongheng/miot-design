@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import MessageDialog from 'miot/ui/Dialog/MessageDialog';
+import { MessageDialog } from 'miot-design';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
