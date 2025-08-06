@@ -21,7 +21,7 @@ nav:
 ```jsx
 import React from 'react';
 import { Text } from 'react-native';
-import { NavigationBar } from 'mhui-rn-fixed';
+import { NavigationBar } from 'miot-design';
 
 export default () => (
   <>

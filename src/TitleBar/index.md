@@ -20,7 +20,7 @@ nav:
 
 ```jsx
 // @ts-ignore
-import { TitleBar } from 'mhui-rn-fixed';
+import { TitleBar } from 'miot-design';
 import React from 'react';
 
 const Index = () => {

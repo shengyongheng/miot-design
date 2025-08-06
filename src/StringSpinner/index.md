@@ -20,7 +20,7 @@ IOS、Android 原生组件当前无法渲染
 
 ```tsx
 // @ts-ignore
-import { StringSpinner } from 'mhui-rn-fixed';
+import { StringSpinner } from 'miot-design';
 import React from 'react';
 
 const App = () => {

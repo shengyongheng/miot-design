@@ -19,7 +19,7 @@ nav:
 ## 用法
 
 ```js
-import { DragGear } from 'mhui-rn-fixed';
+import { DragGear } from 'miot-design';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 

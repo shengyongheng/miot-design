@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import { AbstractDialog } from 'mhui-rn-fixed';
+import { AbstractDialog } from 'miot-design';
 import React, { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 

@@ -18,7 +18,7 @@ nav:
 ## 用法
 
 ```jsx
-import { ChoiceDialog } from 'mhui-rn-fixed';
+import { ChoiceDialog } from 'miot-design';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 

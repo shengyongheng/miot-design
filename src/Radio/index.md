@@ -20,7 +20,7 @@ Radio 组件是一个基础的交互元素，用于触发操作。
 ## 用法
 
 ```jsx
-// import { Radio } from 'mhui-rn-fixed';
+// import { Radio } from 'miot-design';
 import { Radio } from 'miot-design';
 import React, { useState } from 'react';
 

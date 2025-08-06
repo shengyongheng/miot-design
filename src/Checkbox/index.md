@@ -24,7 +24,7 @@ Checkbox 组件是一个基础的交互元素，用于触发操作。
 ```jsx
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import { Checkbox } from 'mhui-rn-fixed';
+import { Checkbox } from 'miot-design';
 
 const Index = () => {
   const [checked, setChecked] = useState(false);

@@ -12,7 +12,7 @@ features:
     icon: https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/q48YQ5X4ytAAAAAAAAAAAAAAFl94AQBr
   - title: 成员配置插件
     desc: 自动化成员配置，提高版本配置、发布效率
-    icon: /assets/Mijia_icon.png
+    icon: /assets/images/Mijia_icon.png
   - title: 业务脚手架
     desc: 开发贴合业务脚手架，创建、打包项目
     icon: https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/Y_NMQKxw7OgAAAAAAAAAAAAAFl94AQBr

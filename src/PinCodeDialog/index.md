@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import { PinCodeDialog } from 'mhui-rn-fixed';
+import { PinCodeDialog } from 'miot-design';
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 

@@ -20,7 +20,7 @@ nav:
 
 ```tsx
 // @ts-ignore
-import { SlideGear } from 'mhui-rn-fixed';
+import { SlideGear } from 'miot-design';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 

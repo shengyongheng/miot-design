@@ -19,7 +19,7 @@ nav:
 ## 用法
 
 ```tsx
-import { GearCard } from 'mhui-rn-fixed';
+import { GearCard } from 'miot-design';
 import React, { useState } from 'react';
 
 const Index = () => {
