@@ -1,6 +1,6 @@
 {
   "name": "miot-design",
-  "version": "1.1.0",
+  "version": "1.7.0",
   "description": "miot-design",
   "keywords": [
     "react-native",
@@ -33,12 +33,12 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "build": "rollup -c",
     "docs:build": "dumi build",
     "father:build": "father build",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "release": "dotenv release-it",
+    "rollup:build": "rollup -c",
     "start": "dumi dev",
     "test": "jest",
     "typescript": "tsc --noEmit"
