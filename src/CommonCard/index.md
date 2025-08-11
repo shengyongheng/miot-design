@@ -24,7 +24,7 @@ import { CommonCard } from 'miot-design';
 const App = (props) => {
   return (
     <>
-      <CommonCard />
+      <CommonCard title="标题" count={100} isActive2={true} />
     </>
   );
 };
