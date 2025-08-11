@@ -8,5 +8,12 @@
       "files": ".prettierrc",
       "options": { "parser": "json" }
     }
+  ],
+  "prettier/prettier": [
+    "off",
+    {
+      "singleQuote": true,
+      "parser": "flow"
+    }
   ]
 }

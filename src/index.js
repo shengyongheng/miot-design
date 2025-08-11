@@ -3,6 +3,7 @@ export { default as BlankPage } from './BlankPage/index.js';
 export { default as Card } from './Card/index.js';
 export { default as Checkbox } from './Checkbox/index.js';
 export { default as ChoiceDialog } from './ChoiceDialog/index.js';
+export { default as CommonCard } from './CommonCard/index.js';
 export { default as DragGear } from './DragGear/index.js';
 export { default as GearCard } from './GearCard/index.js';
 export { default as InputDialog } from './InputDialog/index.js';
