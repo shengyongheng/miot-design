@@ -19,13 +19,18 @@ nav:
 
 ```jsx
 import React from 'react';
-import { CommonCard } from 'miot-design';
+import { CommonCard, Provider } from 'miot-design';
 
 const App = (props) => {
   return (
-    <>
+    <Provider
+      theme={{
+        color: 'red',
+        backgroundColor: 'silver',
+      }}
+    >
       <CommonCard title="标题" count={100} isActive2={true} />
-    </>
+    </Provider>
   );
 };
 

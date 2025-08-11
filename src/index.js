@@ -17,6 +17,7 @@ export { default as NormalGear } from './NormalGear/index.js';
 export { default as NumberSpinner } from './NumberSpinner/index.js';
 export { default as PinCodeDialog } from './PinCodeDialog/index.js';
 export { default as ProgressDialog } from './ProgressDialog/index.js';
+export { default as Provider } from './provider/index.js';
 export { default as Radio } from './Radio/index.js';
 export { default as Separator } from './Separator/index.js';
 export { default as SlideGear } from './SlideGear/index.js';
