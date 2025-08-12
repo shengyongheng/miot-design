@@ -1,5 +1,5 @@
 ---
-title: SlideGear
+title: SlideGear 滑动选档
 group:
   path: '/basic'
   title: 基础组件
@@ -10,11 +10,17 @@ nav:
   order: 0
 ---
 
-# ListItem 普通列表项
+# SlideGear 滑动选档
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+| 基本信息  |                                                                                       |
+| --------- | ------------------------------------------------------------------------------------- |
+| 中文名称  | 滑动选档                                                                              |
+| 描述      | 类似于 Slider，使用滑动手势选择具体值。<br />适用于一段范围的选值或者较多档位的切换。 |
+| 位置      | `miot/ui/Gear/SlideGear`                                                              |
+| SDK_Level | `SDK_10022`                                                                           |
+| 注意事项  | \                                                                                     |
 
 ## 用法
 
@@ -72,10 +78,25 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+### TYPE(容器和滑块的圆角类型)
+
+| Name      | Type                | Value                              | Description |
+| --------- | ------------------- | ---------------------------------- | ----------- |
+| CIRCLE    | <code>string</code> | <code>&quot;circle&quot;</code>    | 圆形 ⭕️    |
+| RECTANGLE | <code>string</code> | <code>&quot;rectangle&quot;</code> | 方形 ⬜️    |
+
+| Name                  | Type                                           | Description                                                   |
+| --------------------- | ---------------------------------------------- | ------------------------------------------------------------- |
+| type                  | [<code>TYPE</code>](#type容器和滑块的圆角类型) | 容器和滑块的圆角类型                                          |
+| options               | <code>array&lt;string&gt;</code>               | 档位可选项，以字符串数组表示，必填                            |
+| showEndText           | <code>bool</code>                              | 是否显示两端的文字，即`options`的第一个和最后一个，默认`true` |
+| containerStyle        | <code>style</code>                             | 容器样式，设置背景颜色无效                                    |
+| blockStyle            | <code>style</code>                             | 滑块样式，尺寸始终比容器小                                    |
+| minimumTrackTintColor | <code>string</code>                            | 滑块左侧填充颜色                                              |
+| leftTextColor         | <code>string</code>                            | 最左侧文字颜色，`showEndText = true`时有效                    |
+| maximumTrackTintColor | <code>string</code>                            | 滑块右侧填充颜色                                              |
+| rightTextColor        | <code>string</code>                            | 最右侧文字颜色，`showEndText = true`时有效                    |
+| value                 | <code>number</code>                            | 被选择档位的数组下标, `0<=value<=options.length -1`           |
+| disabled              | `boolean`                                      | 是否禁用交互，默认`false`(`❗️SDK_10023`新增)                 |
+| onValueChange         | <code>function</code>                          | 滑动时的回调函数                                              |
+| onSlidingComplete     | <code>function</code>                          | 滑动结束的回调函数                                            |

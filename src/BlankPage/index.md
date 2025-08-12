@@ -1,5 +1,5 @@
 ---
-title: BlankPage
+title: BlankPage 空白页面
 group:
   path: '/basic'
   title: 基础组件
@@ -14,7 +14,13 @@ nav:
 
 ## 简介
 
-BlankPage 组件是一个基础的交互元素，用于触发操作。
+| 基本信息  |                                                                |
+| --------- | -------------------------------------------------------------- |
+| 中文名称  | 空白页面                                                       |
+| 描述      | 就是一个普通的空白页面，在数据未加载完毕或者加载失败的时候显示 |
+| 位置      | `miot/ui/BlankPage`                                            |
+| SDK_Level | `SDK_10024`                                                    |
+| 注意事项  | \                                                              |
 
 ## 用法
 
@@ -57,10 +63,37 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+### TYPE(空白页面底部视图类型)
+
+| Name      | Type                | Value                              | Description        |
+| --------- | ------------------- | ---------------------------------- | ------------------ |
+| BUTTON    | <code>string</code> | <code>&quot;button&quot;</code>    | 底部是按钮         |
+| UNDERLINE | <code>string</code> | <code>&quot;underline&quot;</code> | 底部是下划线超链接 |
+
+### Underline(下划线)
+
+| Name      | Type                             | Description          |
+| --------- | -------------------------------- | -------------------- |
+| text      | <code>string</code>              | 下划线文字           |
+| textStyle | <code>ViewPropTypes.style</code> | 文字样式             |
+| callback  | <code>function</code>            | 点击下划线的回调函数 |
+
+### Button(按钮)
+
+| Name        | Type                             | Description        |
+| ----------- | -------------------------------- | ------------------ |
+| text        | <code>string</code>              | 按钮文字           |
+| buttonStyle | <code>ViewPropTypes.style</code> | 按钮样式           |
+| textStyle   | <code>ViewPropTypes.style</code> | 按钮文字样式       |
+| callback    | <code>function</code>            | 点击按钮的回调函数 |
+
+| Param     | Type                                           | Description                                           |
+| --------- | ---------------------------------------------- | ----------------------------------------------------- |
+| type      | [<code>TYPE</code>](#TYPE空白页面底部视图类型) | 空白页面底部视图类型，是按钮还是下划线，默认是按钮    |
+| underline | [<code>Underline</code>](#Underline下划线)     | 下划线相关数据，`TYPE.UNDERLINE`时有效                |
+| button    | [<code>Button</code>](#button按钮-1)           | 按钮相关数据，`TYPE.BUTTON`时有效                     |
+| icon      | <code>resource</code>                          | 图标资源                                              |
+| iconStyle | <code>ViewPropTypes.style</code>               | 图标样式                                              |
+| message   | <code>string</code>                            | 图标正下方的主要文案，必填                            |
+| desc      | <code>string</code>                            | `message`下方的描述解释文案，选填                     |
+| extraInfo | <code>string</code>                            | 底部按钮上方的描述解释文案，选填，`TYPE.BUTTON`时有效 |

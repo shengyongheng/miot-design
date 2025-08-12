@@ -1,5 +1,5 @@
 ---
-title: Checkbox
+title: Checkbox 复选框
 order: 0
 group:
   path: '/basic'
@@ -15,7 +15,13 @@ nav:
 
 ## 简介
 
-Checkbox 组件是一个基础的交互元素，用于触发操作。
+| 基本信息  |                             |
+| --------- | --------------------------- |
+| 中文名称  | 复选框                      |
+| 描述      | 多选时可使用，有动效。      |
+| 位置      | `miot/ui/Checkbox/Checkbox` |
+| SDK_Level | `SDK_10011`                 |
+| 注意事项  | \                           |
 
 ## 用法
 
@@ -65,10 +71,10 @@ export default Index;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Name          | Type                | Description              |
+| ------------- | ------------------- | ------------------------ |
+| style         | <code>style</code>  | 样式                     |
+| disabled      | <code>bool</code>   | 是否禁用，默认 `false`   |
+| checked       | <code>bool</code>   | 是否勾选，默认 `false`   |
+| checkedColor  | <code>string</code> | 勾选背景颜色，默认米家绿 |
+| onValueChange | `function`          | 点击回调函数             |

@@ -1,5 +1,5 @@
 ---
-title: DragGear
+title: DragGear 拖拽选档
 group:
   path: '/basic'
   title: 基础组件
@@ -10,15 +10,21 @@ nav:
   order: 0
 ---
 
-# ListItem 普通列表项
+# DragGear 拖拽选档
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+| 基本信息  |                                                                                              |
+| --------- | -------------------------------------------------------------------------------------------- |
+| 中文名称  | 拖拽选档                                                                                     |
+| 描述      | 使用拖拽手势或者直接点击从不同选项中选择一项，有动效。<br />适用于电暖器、净化器的档位切换。 |
+| 位置      | `miot/ui/Gear/DragGear`                                                                      |
+| SDK_Level | `SDK_10011`                                                                                  |
+| 注意事项  | \                                                                                            |
 
 ## 用法
 
-```js
+```jsx
 import { DragGear } from 'miot-design';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
@@ -52,10 +58,14 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Name           | Type                             | Description                                                                                                                                                        |
+| -------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| options        | <code>array&lt;string&gt;</code> | 档位可选项，以字符串数组表示，必填。<br />❗️ 每项文字尽量精简                                                                                                     |
+| margin         | <code>number</code>              | 档位选项之间的间距，默认 `12`, 示意图 \|12⭕️12⭕️12\|                                                                                                             |
+| maxWidth       | <code>number</code>              | 容器宽度最大值，不传则默认屏幕宽度。 如果所有档位的宽度 + 间距占据的宽度 <= `maxWidth`，则取实际宽度； 否则容器宽度取 `maxWidth`，各个档位的宽度和间距自适应减小。 |
+| containerStyle | <code>style</code>               | 容器样式，设置宽高无效                                                                                                                                             |
+| normalStyle    | <code>style</code>               | 普通档位样式，如果没有设置宽高，则默认宽高为 `50`                                                                                                                  |
+| textStyle      | <code>style</code>               | 档位文字的样式                                                                                                                                                     |
+| selectColor    | <code>string</code>              | 被选择档位的背景色                                                                                                                                                 |
+| selectIndex    | <code>number</code>              | 被选择档位的数组下标                                                                                                                                               |
+| onSelect       | <code>function</code>            | 选择某档位后的回调函数                                                                                                                                             |

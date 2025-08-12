@@ -1,5 +1,5 @@
 ---
-title: Card
+title: Card 卡片容器
 order: 0
 group:
   path: '/basic'
@@ -15,7 +15,14 @@ nav:
 
 ## 简介
 
-Card 组件是一个基础的交互元素，用于触发操作。
+| 基本信息  |                                                         |
+| --------- | ------------------------------------------------------- |
+| 中文名称  | 卡片容器                                                |
+| 描述      | 卡片容器，有阴影，有弹出和收起动效。                    |
+| 位置      | `miot/ui/Card/Card`                                     |
+| SDK_Level | `SDK_10010`                                             |
+| 说明      | 为了更好地扩展，开发者可以自定义卡片内部视图`innerView` |
+| 注意事项  | \                                                       |
 
 ## 用法
 
@@ -100,10 +107,20 @@ export default Index;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Name          | Type                   | Description                                                             |
+| ------------- | ---------------------- | ----------------------------------------------------------------------- |
+| innerView     | <code>component</code> | 卡片内部 View, 不传该参数将显示默认的左 `icon` + 右 `text`              |
+| icon          | <code>int</code>       | 左侧图标的资源 id, 参照`Image`的`resource`属性, 不传将不显示图标        |
+| text          | <code>string</code>    | 右侧文案                                                                |
+| visible       | <code>bool</code>      | 是否显示卡片, 默认值 `true`                                             |
+| showDismiss   | <code>bool</code>      | 是否显示右上角的关闭按钮, 默认值 `false`                                |
+| disabled      | `bool`                 | 是否禁用卡片点击, 默认值 `false`<br />(`❗️SDK_10021`新增)              |
+| dismiss       | <code>function</code>  | 点右上角关闭按钮的回调函数                                              |
+| showShadow    | <code>bool</code>      | 是否显示卡片阴影, 默认值 `true`                                         |
+| onPress       | <code>function</code>  | 点击事件, 不传该参数将显示禁用态                                        |
+| cardStyle     | <code>style</code>     | 卡片容器的自定义样式, 默认样式 `{ width: screenWidth - 30, height:66 }` |
+| iconStyle     | <code>style</code>     | 左侧图标的自定义样式                                                    |
+| textStyle     | <code>style</code>     | 右侧文案的自定义样式                                                    |
+| underlayColor | <code>string</code>    | 卡片点击态颜色，默认 `rgba(0,0,0,0.05)`                                 |
+| shadowColor   | <code>string</code>    | 阴影颜色，默认 `'#000'`，❗️android 平台只支持 16 进制的 `shadowColor`  |
+| shadowOpacity | <code>number</code>    | 阴影透明度，默认 `0.03`                                                 |

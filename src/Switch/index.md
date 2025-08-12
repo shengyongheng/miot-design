@@ -1,5 +1,5 @@
 ---
-title: Switch
+title: Switch 开关
 order: 1
 group:
   path: '/basic'
@@ -11,11 +11,17 @@ nav:
   order: 0
 ---
 
-# Button 按钮
+# Switch 开关
 
 ## 简介
 
-Button 组件是一个基础的交互元素，用于触发操作。
+| 基本信息  |                      |
+| --------- | -------------------- |
+| 中文名称  | 开关                 |
+| 描述      | 简单的开关，有动效。 |
+| 位置      | `miot/ui/Switch`     |
+| SDK_Level | `SDK_10020`          |
+| 注意事项  | \                    |
 
 ## 用法
 
@@ -43,10 +49,11 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Name          | Type                  | Description              |
+| ------------- | --------------------- | ------------------------ |
+| value         | <code>bool</code>     | 开关状态，默认值 `false` |
+| style         | <code>style</code>    | 开关样式，仅支持宽高     |
+| onTintColor   | <code>string</code>   | 打开时的背景颜色         |
+| tintColor     | <code>string</code>   | 关闭时的背景颜色         |
+| disabled      | <code>bool</code>     | 是否禁用，默认值 `false` |
+| onValueChange | <code>function</code> | 切换开关的回调函数       |

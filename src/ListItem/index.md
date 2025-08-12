@@ -1,5 +1,6 @@
 ---
-title: ListItem
+title: ListItem 普通列表项
+
 group:
   path: '/business'
   title: 业务组件
@@ -14,7 +15,13 @@ nav:
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+| 基本信息  |                                                                |
+| --------- | -------------------------------------------------------------- |
+| 中文名称  | 普通列表项                                                     |
+| 描述      | 常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字 |
+| 位置      | `miot/ui/ListItem/ListItem`                                    |
+| SDK_Level | `SDK_10004`                                                    |
+| 注意事项  | \                                                              |
 
 ## 用法
 
@@ -62,10 +69,19 @@ export default Index;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Name           | Type                             | Description                                              |
+| -------------- | -------------------------------- | -------------------------------------------------------- |
+| title          | <code>string</code>              | 左侧主标题                                               |
+| subtitle       | <code>string</code>              | 右侧副标题                                               |
+| value          | <code>string</code>              | 右侧文案                                                 |
+| onPress        | <code>function</code>            | 点击事件                                                 |
+| disabled       | <code>bool</code>                | 是否禁用点击，默认值 `false`                             |
+| showSeparator  | <code>bool</code>                | 是否显示分割线，默认值 `true`                            |
+| hideArrow      | `bool`                           | 是否隐藏右侧箭头图片，默认值 `false`(`❗️SDK_10020`新增) |
+| showDot        | `bool`                           | 是否显示小红点，默认值`false`(`❗️SDK_10021`新增)        |
+| separator      | <code>component</code>           | 自定义分割线，不传将显示默认样式的分割线                 |
+| containerStyle | <code>style</code>               | 列表项的自定义样式                                       |
+| titleStyle     | <code>style</code>               | 标题的自定义样式                                         |
+| subtitleStyle  | <code>style</code>               | 副标题的自定义样式                                       |
+| valueStyle     | <code>style</code>               | 右侧文案的自定义样式                                     |
+| leftIcon       | <code>ImageSourcePropType</code> | 10045 新增 左侧自定义图标                                |

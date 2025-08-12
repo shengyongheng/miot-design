@@ -1,5 +1,5 @@
 ---
-title: ProgressDialog
+title: ProgressDialog 进度弹窗
 group:
   path: '/basic'
   title: 基础组件
@@ -14,7 +14,13 @@ nav:
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+| 基本信息  |                                                                                                                                                                 |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 中文名称  | 进度弹窗                                                                                                                                                        |
+| 描述      | 在需要用户长时间等待的时候，告知用户当前进度，比如最常用场景：下载。点击背景不会隐藏，可通过改变`visible` 属性隐藏，也可以设置`autoDismiss`在进度完成后自动隐藏 |
+| 位置      | `miot/ui/Dialog/ProgressDialog`                                                                                                                                 |
+| SDK_Level | `SDK_10022`                                                                                                                                                     |
+| 注意事项  | \                                                                                                                                                               |
 
 ## 用法
 
@@ -74,10 +80,14 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+| Param         | Type                  | Description                                                                                              |
+| ------------- | --------------------- | -------------------------------------------------------------------------------------------------------- |
+| animationType | <code>string</code>   | modal 显示动效, 默认`'fade'`，参考 https://facebook.github.io/react-native/docs/0.54/modal#animationtype |
+| visible       | <code>bool</code>     | 是否显示 modal, 默认`false`，参考 https://facebook.github.io/react-native/docs/0.54/modal#visible        |
+| message       | <code>string</code>   | 提示信息文字                                                                                             |
+| progress      | <code>number</code>   | 当前进度，默认`0`，范围为 `0～1`                                                                         |
+| color         | <code>string</code>   | progressBar 填充颜色，默认米家绿                                                                         |
+| unfilledColor | <code>string</code>   | progressBar 未填充颜色，默认`#f1f1f1`                                                                    |
+| textColor     | <code>string</code>   | 进度百分比文字颜色，默认米家绿                                                                           |
+| autoDismiss   | <code>bool</code>     | 是否在进度条读完之后自动隐藏 Modal, 默认`false`                                                          |
+| onDismiss     | <code>function</code> | Modal 隐藏时的回调函数                                                                                   |

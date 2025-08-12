@@ -1,5 +1,5 @@
 ---
-title: InputDialog
+title: InputDialog 输入弹窗
 group:
   path: '/basic'
   title: 基础组件
@@ -10,11 +10,17 @@ nav:
   order: 0
 ---
 
-# InputDialog 加载列表
+# InputDialog 输入弹窗
 
 ## 简介
 
-常用的列表项，带有右箭头（可隐藏），可设置标题/副标题/右侧文字
+| 基本信息  |                                                                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 中文名称  | 输入弹窗                                                                                                                                   |
+| 描述      | 提示用户录入信息并记录。输入框弹窗的业务场景有时候会很复杂，如果本组件无法满足你的业务需求，请使用 `AbstractDialog` 参考本组件源码自行实现 |
+| 位置      | `miot/ui/Dialog/InputDialog`                                                                                                               |
+| SDK_Level | `SDK_10022`                                                                                                                                |
+| 注意事项  | `TextInput` 的 `onEndEditing`不能使用                                                                                                      |
 
 ## 用法
 
@@ -161,10 +167,55 @@ export default App;
 
 ## API
 
-| 属性  | 类型    | 默认值    | 说明                                           |
-| ----- | ------- | --------- | ---------------------------------------------- |
-| type  | string  | 'default' | 按钮类型，可选值为 'primary', 'dashed', 'link' |
-| size  | string  | 'middle'  | 按钮尺寸，可选值为 'large', 'middle', 'small'  |
-| shape | string  | 'default' | 按钮形状，可选值为 'circle', 'round'           |
-| value | boolean | false     | 指定当前是否选中                               |
-| ...   | ...     | ...       | ...                                            |
+#### TYPE(输入弹窗的类型)
+
+| Name      | Type                | Default                            | Description                                                 |
+| --------- | ------------------- | ---------------------------------- | ----------------------------------------------------------- |
+| SIMPLE    | <code>string</code> | <code>&quot;simple&quot;</code>    | 普通，只有输入框                                            |
+| UNDERLINE | <code>string</code> | <code>&quot;underline&quot;</code> | 输入框上方有文字说明和下划线超链接                          |
+| CHECKBOX  | <code>string</code> | <code>&quot;checkbox&quot;</code>  | 输入框下方有勾选框和文字                                    |
+| BOTH      | <code>string</code> | <code>&quot;both&quot;</code>      | 输入框上方有文字说明和下划线超链接 输入框下方有勾选框和文字 |
+
+#### UnderlineData(输入框上方下划线数据)
+
+| Name          | Type                  | Description                                                                                        |
+| ------------- | --------------------- | -------------------------------------------------------------------------------------------------- |
+| leftText      | <code>string</code>   | 左侧说明文字 10045 后失效                                                                          |
+| underlineText | <code>string</code>   | 右侧下划线文字                                                                                     |
+| onPress       | <code>function</code> | 点击下划线文字的回调函数                                                                           |
+| useNewTheme   | <code>bool</code>     | 是否使用新样式, 10045 新增-之后*必须*使用新下划线样式(更改为输入框下方，并且不能添加左侧说明文字） |
+
+#### Input(输入框)
+
+| Name           | Type                  | Description                                                                                       |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------- |
+| placeholder    | <code>string</code>   | 占位文字，参考 https://facebook.github.io/react-native/docs/0.54/textinput#placeholder            |
+| defaultValue   | <code>string</code>   | 初始默认文字，参考 https://facebook.github.io/react-native/docs/0.54/textinput#defaultvalue       |
+| onChangeText   | <code>function</code> | 文字变化回调，参考 https://facebook.github.io/react-native/docs/0.54/textinput#onchangetext       |
+| textInputProps | <code>Object</code>   | 其他 TextInput 支持的属性，参考 https://facebook.github.io/react-native/docs/0.54/textinput#props |
+| isCorrect      | <code>bool</code>     | 10045 新增 输入框的结果 - 输入框边框变红，下方显示红色警示文字                                    |
+| type           | <code>string</code>   | 输入框右侧的图案类型，默认'NONE'-无, 'DELETE'-删除键, 'SECURE'-眼睛状密码遮挡                     |
+
+#### CheckboxData(输入框下方勾选框数据)
+
+| Name    | Type                 | Description          |
+| ------- | -------------------- | -------------------- |
+| checked | <code>boolean</code> | 勾选框的初始勾选状态 |
+| text    | <code>string</code>  | 勾选框右侧的说明文字 |
+
+| Param            | Type                                                             | Description                                                                                                           |
+| ---------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| animationType    | <code>string</code>                                              | modal 显示动效, 默认`'fade'`，参考 https://facebook.github.io/react-native/docs/0.54/modal#animationtype              |
+| visible          | <code>bool</code>                                                | 是否显示 modal, 默认`false`，参考 https://facebook.github.io/react-native/docs/0.54/modal#visible                     |
+| type             | [<code>TYPE</code>](#TYPE输入弹窗的类型)                         | 输入弹窗的类型。是否只有输入框，输入框上方是否有下划线超链接，输入框下方是否有勾选项，详见 `TYPE`，默认 `TYPE.SIMPLE` |
+| color            | <code>string</code>                                              | 下划线超链接的文字颜色 / 勾选框的勾选颜色，默认米家绿                                                                 |
+| title            | <code>string</code>                                              | 标题文字                                                                                                              |
+| underlineData    | [<code>UnderlineData</code>](#UnderlineData输入框上方下划线数据) | 输入框上方的数据，包括左侧说明文字，右侧下划线文字及其点击回调函数，只对 `TYPE.UNDERLINE` 和 `TYPE.BOTH` 有效         |
+| inputs           | [<code>Array&lt;Input&gt;</code>](#Input输入框)                  | 输入框数组，定义输入框的属性，对所有的 `TYPE` 有效                                                                    |
+| checkboxData     | [<code>CheckboxData</code>](#CheckboxData输入框下方勾选框数据)   | 输入框下方的数据，包括勾选状态，描述文字，只对 `TYPE.CHECKBOX` 和 `TYPE.BOTH` 有效                                    |
+| buttons          | [<code>Array&lt;Button&gt;</code>](#button按钮)                  | 和`AbstractDialog`的`buttons`属性相同                                                                                 |
+| onDismiss        | <code>function</code>                                            | Modal 隐藏时的回调函数                                                                                                |
+| isCorrect        | <code>bool</code>                                                | 10045 新增 弹窗的结果 - 副标题下会显示红色警示文字                                                                    |
+| warnText         | <code>string</code>                                              | 10045 新增 副标题下的红色警示文字                                                                                     |
+| inputWarnText    | <code>string</code>                                              | 10045 新增 输入框下的红色警示文字                                                                                     |
+| noInputDisButton | <code>bool</code>                                                | 10048 新增 是否有[无输入内容时无法点击确认按钮]的逻辑，默认无(false), 设置[defaultValue 初始默认文字]也算作有输入内容 |
