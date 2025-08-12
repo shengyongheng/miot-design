@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export default (theme) =>
   StyleSheet.create({
-    color: {
-      color: theme.color,
+    container: {
+      backgroundColor: theme.background_color,
     },
-    backgroundColor: {
-      backgroundColor: theme.backgroundColor,
+    title: {
+      color: theme._color,
     },
   });

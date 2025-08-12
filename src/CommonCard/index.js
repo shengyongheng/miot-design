@@ -7,11 +7,11 @@ import CommonCardStyles from './style';
 const CommonCard = (props) => {
   return (
     <WithTheme styles={props.styles} themeStyles={CommonCardStyles}>
-      {(styles) => {
-        console.log('styles:', styles);
+      {(_styles) => {
+        console.log('_styles:', _styles);
         return (
-          <View style={styles.backgroundColor}>
-            <Text style={styles.color}>CommonCard</Text>
+          <View style={_styles.container}>
+            <Text style={_styles.title}>CommonCard</Text>
           </View>
         );
       }}

@@ -25,11 +25,23 @@ const App = (props) => {
   return (
     <Provider
       theme={{
-        color: 'red',
-        backgroundColor: 'silver',
+        _color: 'red',
+        background_color: 'silver',
       }}
     >
-      <CommonCard title="标题" count={100} isActive2={true} />
+      <CommonCard
+        title="标题"
+        count={100}
+        isActive2={true}
+        styles={{
+          container: {
+            backgroundColor: '#e26f08',
+          },
+          title: {
+            color: 'green',
+          },
+        }}
+      />
     </Provider>
   );
 };
