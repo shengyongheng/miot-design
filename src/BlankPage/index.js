@@ -1,4 +1,4 @@
 // @ts-ignore
-import { BlankPage } from 'mhui-rn-fixed';
+import { BlankPage } from 'mhui-rn';
 
 export default BlankPage;

@@ -1,4 +1,4 @@
 // @ts-ignore
-import { InputDialog } from 'mhui-rn-fixed';
+import { InputDialog } from 'mhui-rn';
 
 export default InputDialog;

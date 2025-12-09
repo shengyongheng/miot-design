@@ -1,0 +1,1 @@
+{"version":3,"names":["Switch"],"sources":["index.js"],"sourcesContent":["import { Switch } from 'mhui-rn';\r\n\r\nexport default Switch;\r\n"],"mappings":"AAAA,SAASA,MAAM,QAAQ,SAAS;AAEhC,eAAeA,MAAM","ignoreList":[]}

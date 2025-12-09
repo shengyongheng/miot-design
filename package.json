@@ -1,6 +1,6 @@
 {
   "name": "miot-design",
-  "version": "1.1.0",
+  "version": "1.6.9",
   "description": "miot-design",
   "keywords": [
     "react-native",
@@ -14,23 +14,9 @@
   "repository": "https://github.com/shengyongheng/miot-design",
   "license": "MIT",
   "author": "hengshengyong <3271660881@qq.com> (https://github.com/shengyongheng)",
-  "main": "dist/commonjs/index",
-  "module": "dist/module/index",
-  "source": "src/index",
-  "react-native": "src/index",
-  "types": "lib/typescript/src/index.d.ts",
+  "main": "dist/module/index.js",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -88,54 +74,31 @@
     "core-js": "^3.8.2",
     "dotenv-cli": "^4.0.0",
     "dumi-theme-mobile": "^1.0.0",
-    "prop-types": "15.7.2",
-    "mhui-rn-fixed": "1.2.3"
+    "lodash": "^4.17.21",
+    "prop-types": "15.7.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "7.3.0",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/preset-env": "^7.28.0",
-    "@commitlint/config-conventional": "^11.0.0",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@release-it/conventional-changelog": "^2.0.0",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^28.0.6",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@types/jest": "^26.0.0",
-    "@types/react": "^16.9.19",
-    "@types/react-native": "0.62.13",
     "@umijs/test": "^3.0.5",
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "commitlint": "^11.0.0",
-    "dumi": "^1.0.13",
-    "eslint": "^7.2.0",
-    "eslint-config-prettier": "^7.0.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "husky": "^4.2.5",
-    "jest": "^26.0.1",
     "pod-install": "^0.1.0",
-    "prettier": "^2.0.5",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-builder-bob": "^0.17.1",
-    "release-it": "^14.2.2",
-    "rollup": "2.79.0",
-    "rollup-plugin-multi-input": "^1.5.0",
-    "rollup-plugin-node-externals": "^8.0.1",
-    "typescript": "^4.1.3"
+    "release-it": "^14.2.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "mhui-rn": "^1.17.64",
+    "react": "^16.9.0",
+    "react-native": "^0.61.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "react-native-builder-bob": {
     "source": "src",
-    "output": "bob-lib/dist",
+    "output": "dist",
     "targets": [
       "commonjs",
       "module",

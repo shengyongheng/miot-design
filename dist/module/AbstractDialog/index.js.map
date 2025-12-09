@@ -1,0 +1,1 @@
+{"version":3,"names":["AbstractDialog"],"sources":["index.js"],"sourcesContent":["// import { AbstractDialog } from 'mhui-rn-fixed';\r\nimport { AbstractDialog } from 'mhui-rn';\r\n\r\nexport default AbstractDialog;\r\n"],"mappings":"AAAA;AACA,SAASA,cAAc,QAAQ,SAAS;AAExC,eAAeA,cAAc","ignoreList":[]}

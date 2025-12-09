@@ -1,0 +1,1 @@
+{"version":3,"names":["NormalGear"],"sources":["index.js"],"sourcesContent":["import { NormalGear } from 'mhui-rn';\r\n\r\nexport default NormalGear;\r\n"],"mappings":"AAAA,SAASA,UAAU,QAAQ,SAAS;AAEpC,eAAeA,UAAU","ignoreList":[]}

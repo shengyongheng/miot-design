@@ -1,0 +1,1 @@
+{"version":3,"names":["Checkbox"],"sources":["index.js"],"sourcesContent":["import { Checkbox } from 'mhui-rn';\r\n\r\nexport default Checkbox;\r\n"],"mappings":"AAAA,SAASA,QAAQ,QAAQ,SAAS;AAElC,eAAeA,QAAQ","ignoreList":[]}

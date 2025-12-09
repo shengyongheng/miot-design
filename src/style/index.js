@@ -1,4 +1,4 @@
-import mergeWith from 'lodash.mergewith';
+import { mergeWith } from 'lodash';
 import React, {
   createContext,
   useCallback,

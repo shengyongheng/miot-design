@@ -1,4 +1,4 @@
 // @ts-ignore
-import { ListItemWithSlider } from 'mhui-rn-fixed';
+import { ListItemWithSlider } from 'mhui-rn';
 
 export default ListItemWithSlider;

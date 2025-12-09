@@ -1,4 +1,4 @@
 // @ts-ignore
-import { MessageDialog } from 'mhui-rn-fixed';
+import { MessageDialog } from 'mhui-rn';
 
 export default MessageDialog;

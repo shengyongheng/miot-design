@@ -1,3 +1,3 @@
-import { StringSpinner } from 'mhui-rn-fixed';
+import { StringSpinner } from 'mhui-rn';
 
 export default StringSpinner;

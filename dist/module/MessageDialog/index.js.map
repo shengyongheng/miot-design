@@ -1,0 +1,1 @@
+{"version":3,"names":["MessageDialog"],"sources":["index.js"],"sourcesContent":["// @ts-ignore\r\nimport { MessageDialog } from 'mhui-rn';\r\n\r\nexport default MessageDialog;\r\n"],"mappings":"AAAA;AACA,SAASA,aAAa,QAAQ,SAAS;AAEvC,eAAeA,aAAa","ignoreList":[]}

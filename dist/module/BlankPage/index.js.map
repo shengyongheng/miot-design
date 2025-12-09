@@ -1,0 +1,1 @@
+{"version":3,"names":["BlankPage"],"sources":["index.js"],"sourcesContent":["// @ts-ignore\r\nimport { BlankPage } from 'mhui-rn';\r\n\r\nexport default BlankPage;\r\n"],"mappings":"AAAA;AACA,SAASA,SAAS,QAAQ,SAAS;AAEnC,eAAeA,SAAS","ignoreList":[]}

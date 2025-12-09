@@ -1,3 +1,3 @@
-import { NormalGear } from 'mhui-rn-fixed';
+import { NormalGear } from 'mhui-rn';
 
 export default NormalGear;

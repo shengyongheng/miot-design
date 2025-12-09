@@ -1,3 +1,3 @@
-import { NumberSpinner } from 'mhui-rn-fixed';
+import { NumberSpinner } from 'mhui-rn';
 
 export default NumberSpinner;

@@ -1,0 +1,1 @@
+{"version":3,"names":["InputDialog"],"sources":["index.js"],"sourcesContent":["// @ts-ignore\r\nimport { InputDialog } from 'mhui-rn';\r\n\r\nexport default InputDialog;\r\n"],"mappings":"AAAA;AACA,SAASA,WAAW,QAAQ,SAAS;AAErC,eAAeA,WAAW","ignoreList":[]}

@@ -1,3 +1,3 @@
-import { Checkbox } from 'mhui-rn-fixed';
+import { Checkbox } from 'mhui-rn';
 
 export default Checkbox;

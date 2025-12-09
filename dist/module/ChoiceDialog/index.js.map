@@ -1,0 +1,1 @@
+{"version":3,"names":["ChoiceDialog"],"sources":["index.js"],"sourcesContent":["// @ts-ignore\r\nimport { ChoiceDialog } from 'mhui-rn';\r\n\r\nexport default ChoiceDialog;\r\n"],"mappings":"AAAA;AACA,SAASA,YAAY,QAAQ,SAAS;AAEtC,eAAeA,YAAY","ignoreList":[]}

@@ -1,3 +1,3 @@
-import { DragGear } from 'mhui-rn-fixed';
+import { DragGear } from 'mhui-rn';
 
 export default DragGear;

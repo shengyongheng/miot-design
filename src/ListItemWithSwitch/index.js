@@ -1,4 +1,4 @@
 // @ts-ignore
-import { ListItemWithSwitch } from 'mhui-rn-fixed';
+import { ListItemWithSwitch } from 'mhui-rn';
 
 export default ListItemWithSwitch;

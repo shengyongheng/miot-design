@@ -1,3 +1,3 @@
-import { SlideGear } from 'mhui-rn-fixed';
+import { SlideGear } from 'mhui-rn';
 
 export default SlideGear;

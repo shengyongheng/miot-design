@@ -1,3 +1,3 @@
-import { GearCard } from 'mhui-rn-fixed';
+import { GearCard } from 'mhui-rn';
 
 export default GearCard;

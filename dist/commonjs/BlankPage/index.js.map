@@ -1,0 +1,1 @@
+{"version":3,"names":["_mhuiRn","require","_default","exports","default","BlankPage"],"sources":["index.js"],"sourcesContent":["// @ts-ignore\r\nimport { BlankPage } from 'mhui-rn';\r\n\r\nexport default BlankPage;\r\n"],"mappings":";;;;;;AACA,IAAAA,OAAA,GAAAC,OAAA;AADA;AAAA,IAAAC,QAAA,GAAAC,OAAA,CAAAC,OAAA,GAGeC,iBAAS","ignoreList":[]}

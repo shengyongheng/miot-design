@@ -1,3 +1,3 @@
-import { Separator } from 'mhui-rn-fixed';
+import { Separator } from 'mhui-rn';
 
 export default Separator;

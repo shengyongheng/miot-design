@@ -1,3 +1,3 @@
-import { NavigationBar } from 'mhui-rn-fixed';
+import { NavigationBar } from 'mhui-rn';
 
 export default NavigationBar;

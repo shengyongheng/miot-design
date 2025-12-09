@@ -1,3 +1,3 @@
-import { Radio } from 'mhui-rn-fixed';
+import { Radio } from 'mhui-rn';
 
 export default Radio;

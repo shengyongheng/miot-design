@@ -1,0 +1,1 @@
+{"version":3,"names":["SlideGear"],"sources":["index.js"],"sourcesContent":["import { SlideGear } from 'mhui-rn';\r\n\r\nexport default SlideGear;\r\n"],"mappings":"AAAA,SAASA,SAAS,QAAQ,SAAS;AAEnC,eAAeA,SAAS","ignoreList":[]}

@@ -1,4 +1,4 @@
 // @ts-ignore
-import { LoadingDialog } from 'mhui-rn-fixed';
+import { LoadingDialog } from 'mhui-rn';
 
 export default LoadingDialog;
